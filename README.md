@@ -21,6 +21,7 @@ University of Moratuwa — BSc (Hons) in Information Technology
 - **Styling**: Tailwind CSS v4
 - **Typography**: Genos (Display/Headings) & Poppins (Body/UI)
 - **Design System**: Emerald & dark teal engineering aesthetic with centralized CSS tokens
+- **Data & Types**: Centralized, immutable, typed content models (`types/portfolio.ts`, `data/*`)
 - **Animation**: Motion (primary) & GSAP (hero text)
 - **Testing**: Vitest, React Testing Library, Playwright, axe-core
 
@@ -28,11 +29,11 @@ University of Moratuwa — BSc (Hons) in Information Technology
 
 ## Current Development Status
 
-**Phase 2 — Design System Foundation Complete**
+**Phase 3 — Typed Portfolio Content Data Complete**
 
-- **Fonts**: Genos (500, 600, 700) and Poppins (400, 500, 600) configured via `next/font/google`.
-- **Design Tokens**: Emerald + dark teal color system, surface tokens, border tokens, radii, focus, and selection styles configured in Tailwind CSS v4.
-- **UI Primitives**: `Container`, `SectionHeading`, `Button`, `ButtonLink`, and `TechBadge` created and tested.
+- **Types**: Shared domain interfaces for `Project`, `SkillGroup`, `TechNode`, `TechEdge`, `JourneyItem`, `Achievement`, `NavItem`, `SocialLink`, and `SiteConfig`.
+- **Data**: Centralized and verified content for all 6 projects, skills, tech network, journey timeline, achievements, navigation anchors, social links, and site configuration.
+- **Integrity**: Zero invented metrics or links; URLs remain optional/undefined until provided. Phone numbers strictly excluded.
 
 ---
 
