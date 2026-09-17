@@ -1,0 +1,58 @@
+import { render, screen } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
+import { Navbar } from "@/components/layout/Navbar";
+import { navItems } from "@/data/navigation";
+
+describe("Navbar Component", () => {
+  it("renders skip-to-content accessibility link targeting #main-content", () => {
+    render(<Navbar />);
+    const skipLink = screen.getByRole("link", { name: /skip to content/i });
+
+    expect(skipLink).toBeInTheDocument();
+    expect(skipLink).toHaveAttribute("href", "#main-content");
+  });
+
+  it("renders brand logo link", () => {
+    render(<Navbar />);
+    const brandLink = screen.getByRole("link", {
+      name: /dulan prabashwara home/i,
+    });
+
+    expect(brandLink).toBeInTheDocument();
+    expect(brandLink).toHaveTextContent(/dulan/i);
+  });
+
+  it("renders all navigation items from navigation dataset", () => {
+    render(<Navbar />);
+
+    for (const item of navItems) {
+      const link = screen.getAllByRole("link", {
+        name: new RegExp(`^${item.label}$`, "i"),
+      })[0];
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute("href", item.href);
+    }
+  });
+
+  it("renders desktop CTA action button targeting #contact", () => {
+    render(<Navbar />);
+    const ctaLink = screen.getByRole("link", { name: /contact ↗/i });
+
+    expect(ctaLink).toBeInTheDocument();
+    expect(ctaLink).toHaveAttribute("href", "#contact");
+  });
+
+  it("renders mobile menu trigger", () => {
+    render(<Navbar />);
+    const mobileTrigger = screen.getByRole("button", {
+      name: /open navigation menu/i,
+    });
+
+    expect(mobileTrigger).toBeInTheDocument();
+  });
+
+  it("contains zero phone numbers anywhere in rendered markup", () => {
+    const { container } = render(<Navbar />);
+    expect(container.innerHTML).not.toMatch(/(\+94|07\d|\bphone\b|tel:)/i);
+  });
+});

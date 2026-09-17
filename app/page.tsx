@@ -1,3 +1,5 @@
+import { Navbar } from "@/components/layout/Navbar";
+import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button, ButtonLink } from "@/components/ui/Button";
@@ -5,7 +7,10 @@ import { TechBadge } from "@/components/ui/TechBadge";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col gap-16 py-12">
+    <>
+      <ScrollProgress />
+      <Navbar />
+      <main id="main-content" className="min-h-screen flex flex-col gap-16 pt-28 pb-12">
       {/* Header / Intro Banner */}
       <header className="border-b border-border-light pb-8">
         <Container>
@@ -226,5 +231,6 @@ export default function Home() {
         </Container>
       </section>
     </main>
+    </>
   );
 }

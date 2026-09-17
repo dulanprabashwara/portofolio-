@@ -29,12 +29,14 @@ University of Moratuwa — BSc (Hons) in Information Technology
 
 ## Current Development Status
 
-**Phase 4 — Global Motion Foundation Complete**
+**Phase 5 — Adaptive Navigation, Mobile Menu & Scroll Progress Complete**
 
-- **Motion Provider**: `components/providers/MotionProvider.tsx` wrapping layout with `<MotionConfig reducedMotion="user">` while keeping `app/layout.tsx` a pure Server Component.
-- **Animation Constants**: Centralized in `lib/animations.ts` (`DURATIONS`, `EASINGS`, `STAGGER`, `SPRINGS`, `VIEWPORT`).
-- **Reusable Variants**: Typed Motion variants (`fadeIn`, `fadeUp`, `scaleIn`, `staggerContainer`, `staggerItem`).
-- **Accessibility**: Automatic OS `prefers-reduced-motion` compliance.
+- **Adaptive Desktop Navbar**: `components/layout/Navbar.tsx` featuring scroll-driven state transition (>96px) morphing from full-width top bar into a floating dark glass pill (`bg-surface-dark/90 backdrop-blur-[18px] border border-mint/15 shadow-xl`).
+- **Active Section Indicator**: Motion `layoutId="active-nav-indicator"` driving an animated indicator that tracks the currently intersecting section.
+- **Scroll Progress Bar**: `components/layout/ScrollProgress.tsx` binding `useScroll` to a 2px emerald indicator fixed at viewport top (`z-60`).
+- **Accessible Mobile Menu**: `components/layout/MobileMenu.tsx` with hamburger toggle (44x44px target), focus trap, Escape key dismiss, body scroll lock, numbered links (`01 About`, etc.), and social icons.
+- **Keyboard Navigation**: Accessible skip-to-content link targeting `#main-content`.
+- **Accessibility Verification**: Tested with axe-core for WCAG 2.2 AA compliance both with menu closed and open.
 
 ---
 

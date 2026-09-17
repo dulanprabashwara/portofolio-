@@ -17,6 +17,51 @@ test.describe("Homepage Design System Preview", () => {
     await expect(exploreButtons.first()).toBeVisible();
   });
 
+  test("displays desktop navbar, brand, and navigation links", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    const brand = page.getByRole("link", { name: "Dulan Prabashwara Home" });
+    await expect(brand).toBeVisible();
+
+    const skipLink = page.getByRole("link", { name: "Skip to content" });
+    expect(skipLink).toBeAttached();
+
+    const contactCta = page.getByRole("link", { name: "Contact ↗" });
+    await expect(contactCta).toBeVisible();
+
+    const aboutLink = page.getByRole("link", { name: "About" }).first();
+    await expect(aboutLink).toBeVisible();
+  });
+
+  test("opens mobile navigation menu, traps focus, and closes with escape", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto("/");
+
+    const openBtn = page.getByRole("button", { name: /open navigation menu/i });
+    await expect(openBtn).toBeVisible();
+
+    await openBtn.click();
+
+    const dialog = page.getByRole("dialog", { name: /mobile navigation/i });
+    await expect(dialog).toBeVisible();
+
+    // Verify nav links inside mobile menu
+    const aboutMobileLink = dialog.getByRole("link", { name: /about/i });
+    await expect(aboutMobileLink).toBeVisible();
+
+    // Test accessibility with mobile menu open
+    const axeResults = await new AxeBuilder({ page }).analyze();
+    const criticalViolations = axeResults.violations.filter(
+      (v) => v.impact === "critical" || v.impact === "serious"
+    );
+    expect(criticalViolations).toEqual([]);
+
+    // Press Escape to close
+    await page.keyboard.press("Escape");
+    await expect(dialog).not.toBeVisible();
+  });
+
   test("passes accessibility smoke test with no critical violations", async ({ page }) => {
     await page.goto("/");
 
