@@ -1,22 +1,7 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-test.describe("Homepage Design System Preview", () => {
-  test("loads successfully and displays design system preview elements", async ({ page }) => {
-    await page.goto("/");
-
-    const heading = page.getByRole("heading", { level: 1, name: "Dulan Prabashwara" });
-    await expect(heading).toBeVisible();
-
-    await expect(page.getByText("Design System Preview")).toBeVisible();
-    await expect(page.getByText("01 / ABOUT")).toBeVisible();
-    await expect(page.getByText("02 / PROJECTS")).toBeVisible();
-
-    // Verify buttons are rendered and visible
-    const exploreButtons = page.getByRole("button", { name: "Explore Projects ↗" });
-    await expect(exploreButtons.first()).toBeVisible();
-  });
-
+test.describe("Homepage and Hero Section", () => {
   test("displays desktop navbar, brand, and navigation links", async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto("/");
@@ -32,6 +17,68 @@ test.describe("Homepage Design System Preview", () => {
 
     const aboutLink = page.getByRole("link", { name: "About" }).first();
     await expect(aboutLink).toBeVisible();
+  });
+
+  test("displays cinematic Hero section with H1, role, description, and CTA at desktop-1440", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    const heroSection = page.locator("#home");
+    await expect(heroSection).toBeVisible();
+
+    // Verify single primary H1 with accessible name
+    const heading = page.getByRole("heading", { level: 1, name: "Dulan Prabashwara" });
+    await expect(heading).toBeVisible();
+
+    // Role
+    await expect(
+      page.getByText(/software engineering undergraduate & full-stack developer/i)
+    ).toBeVisible();
+
+    // Availability
+    await expect(
+      page.getByText(/available for software engineering internships/i)
+    ).toBeVisible();
+
+    // Primary CTA pointing to #projects
+    const exploreCta = page.getByRole("link", { name: "Explore Projects ↗" });
+    await expect(exploreCta).toBeVisible();
+    await expect(exploreCta).toHaveAttribute("href", "#projects");
+
+    // Social links
+    const githubLink = page.getByRole("link", { name: /github/i }).first();
+    await expect(githubLink).toBeVisible();
+  });
+
+  test("renders stacked mobile Hero cleanly at 390px without horizontal overflow", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/");
+
+    const heading = page.getByRole("heading", { level: 1, name: "Dulan Prabashwara" });
+    await expect(heading).toBeVisible();
+
+    const exploreCta = page.getByRole("link", { name: "Explore Projects ↗" });
+    await expect(exploreCta).toBeVisible();
+
+    const hasHorizontalScroll = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > window.innerWidth;
+    });
+    expect(hasHorizontalScroll).toBe(false);
+  });
+
+  test("renders Hero content cleanly with reduced motion enabled", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/");
+
+    const heading = page.getByRole("heading", { level: 1, name: "Dulan Prabashwara" });
+    await expect(heading).toBeVisible();
+
+    const exploreCta = page.getByRole("link", { name: "Explore Projects ↗" });
+    await expect(exploreCta).toBeVisible();
   });
 
   test("opens mobile navigation menu, traps focus, and closes with escape", async ({ page }) => {

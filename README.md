@@ -29,14 +29,15 @@ University of Moratuwa — BSc (Hons) in Information Technology
 
 ## Current Development Status
 
-**Phase 5 — Adaptive Navigation, Mobile Menu & Scroll Progress Complete**
+**Phase 6 — Cinematic Hero Complete**
 
-- **Adaptive Desktop Navbar**: `components/layout/Navbar.tsx` featuring scroll-driven state transition (>96px) morphing from full-width top bar into a floating dark glass pill (`bg-surface-dark/90 backdrop-blur-[18px] border border-mint/15 shadow-xl`).
-- **Active Section Indicator**: Motion `layoutId="active-nav-indicator"` driving an animated indicator that tracks the currently intersecting section.
-- **Scroll Progress Bar**: `components/layout/ScrollProgress.tsx` binding `useScroll` to a 2px emerald indicator fixed at viewport top (`z-60`).
-- **Accessible Mobile Menu**: `components/layout/MobileMenu.tsx` with hamburger toggle (44x44px target), focus trap, Escape key dismiss, body scroll lock, numbered links (`01 About`, etc.), and social icons.
-- **Keyboard Navigation**: Accessible skip-to-content link targeting `#main-content`.
-- **Accessibility Verification**: Tested with axe-core for WCAG 2.2 AA compliance both with menu closed and open.
+- **Cinematic Hero**: `components/hero/Hero.tsx` rendering within `min-h-[100svh]` on the dark teal palette (`#061A16`), structured cleanly as a Server Component.
+- **GSAP SplitText Title**: `components/hero/HeroTitleAnimation.tsx` with isolated GSAP SplitText masked line reveal, `document.fonts.ready` synchronization, `gsap.context()` cleanup, and accessible single H1 name (`aria-label="Dulan Prabashwara"`).
+- **Choreographed Motion Entrance**: `components/hero/HeroContent.tsx` sequencing availability indicator, role, description, magnetic CTA, and social links with approved durations and easing.
+- **Subtle Magnetic CTA**: `components/ui/MagneticButton.tsx` offering a restrained ±4px hover displacement on fine-pointer desktop, cleanly disabled for touch and reduced motion.
+- **4-Layer Restrained Background**: `components/hero/HeroBackground.tsx` and `components/ui/MotionGrid.tsx` with oversized 30s slow grid drift, atmospheric emerald radial glow, and technical SVG coordinates.
+- **Portrait Placeholder & Parallax**: `components/hero/HeroPortrait.tsx` with integrated silhouette composition, DP monogram, bottom gradient mask, and fine-pointer desktop parallax via MotionValues.
+- **Accessibility Verification**: Tested with axe-core for zero critical/serious violations across desktop and mobile viewports.
 
 ---
 
