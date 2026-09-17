@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Genos, Poppins } from "next/font/google";
+import { MotionProvider } from "@/components/providers/MotionProvider";
 import "./globals.css";
 
 const genos = Genos({
@@ -28,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${genos.variable} ${poppins.variable}`}>
-      <body className="font-body antialiased min-h-screen">{children}</body>
+      <body className="font-body antialiased min-h-screen">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }
