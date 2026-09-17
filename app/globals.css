@@ -1,5 +1,74 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: var(--font-display), system-ui, -apple-system, sans-serif;
+  --font-body: var(--font-body), system-ui, -apple-system, sans-serif;
+
+  --color-bg-deep: var(--bg-deep);
+  --color-bg-dark: var(--bg-dark);
+  --color-surface-dark: var(--surface-dark);
+  --color-surface-raised: var(--surface-raised);
+
+  --color-emerald: var(--emerald);
+  --color-emerald-bright: var(--emerald-bright);
+  --color-emerald-dark: var(--emerald-dark);
+  --color-mint: var(--mint);
+  --color-emerald-soft: var(--emerald-soft);
+
+  --color-off-white: var(--off-white);
+  --color-surface-light: var(--surface-light);
+
+  --color-ink: var(--ink);
+  --color-text-muted: var(--text-muted);
+  --color-text-dark-primary: var(--text-dark-primary);
+  --color-text-dark-secondary: var(--text-dark-secondary);
+
+  --color-border-dark: var(--border-dark);
+  --color-border-light: var(--border-light);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-dark-soft: var(--shadow-dark-soft);
+}
+
+:root {
+  --bg-deep: #061A16;
+  --bg-dark: #08231E;
+  --surface-dark: #0D2E27;
+  --surface-raised: #123A32;
+
+  --emerald: #10B981;
+  --emerald-bright: #34D399;
+  --emerald-dark: #065F46;
+  --mint: #A7F3D0;
+  --emerald-soft: #D1FAE5;
+
+  --off-white: #F7F9F7;
+  --surface-light: #FFFFFF;
+
+  --ink: #10201B;
+  --text-muted: #4B5563;
+  --text-dark-primary: #F4FBF8;
+  --text-dark-secondary: #AABCB5;
+
+  --border-dark: rgba(167, 243, 208, 0.14);
+  --border-light: rgba(16, 32, 27, 0.10);
+
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 2rem;
+  --radius-pill: 9999px;
+
+  --shadow-soft: 0 4px 20px -2px rgba(16, 32, 27, 0.06);
+  --shadow-dark-soft: 0 4px 24px -2px rgba(0, 0, 0, 0.35);
+
+  --glow-emerald: 0 0 80px rgba(16, 185, 129, 0.25);
+}
+
 *,
 *::before,
 *::after {
@@ -13,17 +82,26 @@ body {
   overflow-x: hidden;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
-  color: #111827;
-  background-color: #ffffff;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    sans-serif;
+  color: var(--ink);
+  background-color: var(--off-white);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--emerald);
+  color: var(--bg-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--emerald-bright);
+  outline-offset: 3px;
 }

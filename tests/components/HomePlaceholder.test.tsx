@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Home from "@/app/page";
 
-describe("Home Placeholder Page", () => {
-  it("renders the developer name and engineering portfolio title", () => {
+describe("Design System Preview Page", () => {
+  it("renders the developer name and design system preview banner", () => {
     render(<Home />);
 
     const heading = screen.getByRole("heading", {
@@ -12,10 +12,25 @@ describe("Home Placeholder Page", () => {
     });
     expect(heading).toBeInTheDocument();
 
-    const subtitle = screen.getByText(/software engineering portfolio/i);
-    expect(subtitle).toBeInTheDocument();
+    const banner = screen.getByText(/phase 2 visual foundation/i);
+    expect(banner).toBeInTheDocument();
 
-    const status = screen.getByText(/foundation initialized successfully/i);
-    expect(status).toBeInTheDocument();
+    expect(screen.getByText(/design system preview/i)).toBeInTheDocument();
+  });
+
+  it("renders light and dark preview sections", () => {
+    render(<Home />);
+
+    expect(screen.getByText("01 / ABOUT")).toBeInTheDocument();
+    const aboutHeadings = screen.getAllByText(
+      "Engineering software beyond the interface.",
+    );
+    expect(aboutHeadings.length).toBeGreaterThan(0);
+
+    expect(screen.getByText("02 / PROJECTS")).toBeInTheDocument();
+    const projectsHeadings = screen.getAllByText(
+      "Architected for scale and resilience.",
+    );
+    expect(projectsHeadings.length).toBeGreaterThan(0);
   });
 });

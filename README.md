@@ -19,6 +19,8 @@ University of Moratuwa — BSc (Hons) in Information Technology
 - **Framework**: Next.js (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
+- **Typography**: Genos (Display/Headings) & Poppins (Body/UI)
+- **Design System**: Emerald & dark teal engineering aesthetic with centralized CSS tokens
 - **Animation**: Motion (primary) & GSAP (hero text)
 - **Testing**: Vitest, React Testing Library, Playwright, axe-core
 
@@ -26,7 +28,11 @@ University of Moratuwa — BSc (Hons) in Information Technology
 
 ## Current Development Status
 
-**Phase 1 — Project Scaffold & Engineering Foundation** Complete.
+**Phase 2 — Design System Foundation Complete**
+
+- **Fonts**: Genos (500, 600, 700) and Poppins (400, 500, 600) configured via `next/font/google`.
+- **Design Tokens**: Emerald + dark teal color system, surface tokens, border tokens, radii, focus, and selection styles configured in Tailwind CSS v4.
+- **UI Primitives**: `Container`, `SectionHeading`, `Button`, `ButtonLink`, and `TechBadge` created and tested.
 
 ---
 

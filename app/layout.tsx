@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Genos, Poppins } from "next/font/google";
 import "./globals.css";
+
+const genos = Genos({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Dulan Prabashwara Portfolio",
@@ -12,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased min-h-screen">{children}</body>
+    <html lang="en" className={`${genos.variable} ${poppins.variable}`}>
+      <body className="font-body antialiased min-h-screen">{children}</body>
     </html>
   );
 }
