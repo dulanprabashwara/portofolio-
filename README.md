@@ -29,15 +29,14 @@ University of Moratuwa — BSc (Hons) in Information Technology
 
 ## Current Development Status
 
-**Phase 7 — Technology Marquee Complete**
+**Phase 8 — About Section Complete**
 
-- **Technology Marquee**: `components/TechMarquee.tsx` positioned directly below the Hero in the dark visual family (`#08231E`, `border-mint/10`), providing a fast technical snapshot of full-stack engineering breadth.
-- **Curated Technology Snapshot**: Single source of truth in `data/skills.ts` (`featuredTechnologies`: Next.js, TypeScript, Spring Boot, React, PostgreSQL, Node.js, Java, WebSocket, Docker, Prisma, MongoDB, REST APIs).
-- **Desktop Two-Row Opposing Motion**: Two opposing rows on desktop (`>= 1024px`) moving continuously with linear easing (`x: 0% → -50%` and `x: -50% → 0%`).
-- **Mobile One-Row Continuous Track**: Single continuous track on mobile and tablet (`< 1024px`) for compact vertical efficiency.
-- **Reduced Motion Static Layout**: When `prefers-reduced-motion: reduce` is enabled, switches to an intentionally designed static wrapping flex layout with no horizontal translation.
-- **Accessibility & Canonical Representation**: Visual looping tracks marked `aria-hidden="true"`, while assistive technologies receive a canonical single-instance list (`<ul className="sr-only">`) under `<h2 className="sr-only">Featured technologies</h2>`. Zero duplicate screen reader announcements.
-- **Zero New Dependencies**: Implemented natively using existing Motion foundation without external marquee packages.
+- **Editorial Light About Section**: `components/about/About.tsx` and `components/about/AboutContent.tsx` introduce the first light-themed major section (`--off-white: #F7F9F7`, `--ink: #10201B`), providing a calm, editorial contrast after the cinematic Hero and Marquee.
+- **Dark-to-Light Architectural Transition**: Seamless top gradient band (`from-bg-dark to-off-white`) owned by the About section, bridging `#08231E` to `#F7F9F7` without cartoonish shapes or decorative clutter.
+- **Verified Professional Narrative**: Structured 4-paragraph story highlighting full-stack engineering across Next.js, React, Spring Boot, databases, real-time messaging, and multi-domain software systems.
+- **Academic Credentials & Foundations**: Semantic definition list (`<dl>`, `<dt>`, `<dd>`) for University of Moratuwa, CGPA (3.70 / 4.00), BSc in Information Technology (Hons), and 2024 — Present; paired with semantic coursework chips (`<ul>`, `<li>`) sourced centrally from `data/site.ts`.
+- **Active Navigation Tracking**: First real destination `#about` automatically tracked by `useActiveSection` IntersectionObserver, activating the desktop floating nav indicator and exposing `aria-current="location"`.
+- **Production Composition & Clean Dev Boundaries**: `DesignSystemPreview` cleanly decoupled from public homepage flow while preserved in the repo for dev reference.
 
 ---
 

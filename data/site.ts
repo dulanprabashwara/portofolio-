@@ -11,4 +11,12 @@ export const siteConfig = {
   studyPeriod: "2024 — Present",
   availability: "Available for Software Engineering Internships",
   resumePath: "/resume/Dulan-Prabashwara-CV.pdf",
+  foundations: [
+    "Data Structures & Algorithms",
+    "Object-Oriented Programming",
+    "Software Engineering",
+    "Object-Oriented Analysis & Design",
+    "Database Management Systems",
+    "Operating Systems",
+  ],
 } as const satisfies SiteConfig;

@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Home from "@/app/page";
 
-describe("Design System Preview Page", () => {
-  it("renders the developer name and design system preview banner", () => {
+describe("Production Homepage Composition", () => {
+  it("renders the developer name in Hero heading", () => {
     render(<Home />);
 
     const heading = screen.getByRole("heading", {
@@ -11,26 +11,39 @@ describe("Design System Preview Page", () => {
       name: /dulan prabashwara/i,
     });
     expect(heading).toBeInTheDocument();
-
-    const banner = screen.getByText(/phase 2 visual foundation/i);
-    expect(banner).toBeInTheDocument();
-
-    expect(screen.getByText(/design system preview/i)).toBeInTheDocument();
   });
 
-  it("renders light and dark preview sections", () => {
+  it("renders TechMarquee section", () => {
+    render(<Home />);
+
+    const marqueeTitle = screen.getByRole("heading", {
+      level: 2,
+      name: /featured technologies/i,
+    });
+    expect(marqueeTitle).toBeInTheDocument();
+  });
+
+  it("renders About section with heading and narrative", () => {
     render(<Home />);
 
     expect(screen.getByText("01 / ABOUT")).toBeInTheDocument();
-    const aboutHeadings = screen.getAllByText(
-      "Engineering software beyond the interface.",
-    );
-    expect(aboutHeadings.length).toBeGreaterThan(0);
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: /engineering software beyond the interface/i,
+      }),
+    ).toBeInTheDocument();
+  });
 
-    expect(screen.getByText("02 / PROJECTS")).toBeInTheDocument();
-    const projectsHeadings = screen.getAllByText(
-      "Architected for scale and resilience.",
-    );
-    expect(projectsHeadings.length).toBeGreaterThan(0);
+  it("does NOT render the dev preview banner on the production page", () => {
+    render(<Home />);
+
+    expect(
+      screen.queryByText(/phase 2 visual foundation/i),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/design system preview/i),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText("02 / PROJECTS")).not.toBeInTheDocument();
   });
 });

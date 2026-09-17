@@ -75,4 +75,5 @@ export interface SiteConfig {
   studyPeriod: string;
   availability: string;
   resumePath: string;
+  foundations: readonly string[];
 }

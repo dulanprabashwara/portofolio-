@@ -1,7 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { Navbar } from "@/components/layout/Navbar";
 import { navItems } from "@/data/navigation";
+import * as activeSectionHook from "@/components/layout/useActiveSection";
 
 describe("Navbar Component", () => {
   it("renders skip-to-content accessibility link targeting #main-content", () => {
@@ -54,5 +55,34 @@ describe("Navbar Component", () => {
   it("contains zero phone numbers anywhere in rendered markup", () => {
     const { container } = render(<Navbar />);
     expect(container.innerHTML).not.toMatch(/(\+94|07\d|\bphone\b|tel:)/i);
+  });
+
+  it("does not set aria-current on navigation links when no section is active", () => {
+    render(<Navbar />);
+    for (const item of navItems) {
+      const link = screen.getAllByRole("link", {
+        name: new RegExp(`^${item.label}$`, "i"),
+      })[0];
+      expect(link).not.toHaveAttribute("aria-current");
+    }
+  });
+
+  it("sets aria-current='location' on the active navigation link", () => {
+    const spy = vi
+      .spyOn(activeSectionHook, "useActiveSection")
+      .mockReturnValue("about");
+    render(<Navbar />);
+
+    const aboutLink = screen.getAllByRole("link", {
+      name: /^about$/i,
+    })[0];
+    expect(aboutLink).toHaveAttribute("aria-current", "location");
+
+    const projectsLink = screen.getAllByRole("link", {
+      name: /^projects$/i,
+    })[0];
+    expect(projectsLink).not.toHaveAttribute("aria-current");
+
+    spy.mockRestore();
   });
 });

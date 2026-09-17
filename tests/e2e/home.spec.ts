@@ -124,6 +124,64 @@ test.describe("Homepage and Hero Section", () => {
     expect(hasHorizontalScroll).toBe(false);
   });
 
+  test("displays About section with editorial layout, narrative, academic credentials, and foundations at desktop-1440", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    const aboutSection = page.locator("#about");
+    await expect(aboutSection).toBeVisible();
+
+    const eyebrow = page.getByText("01 / ABOUT");
+    await expect(eyebrow).toBeVisible();
+
+    const heading = page.getByRole("heading", {
+      level: 2,
+      name: /engineering software beyond the interface/i,
+    });
+    await expect(heading).toBeVisible();
+
+    // Narrative key phrases
+    await expect(
+      page.getByText(/information technology undergraduate at the university of moratuwa/i)
+    ).toBeVisible();
+    await expect(page.getByText(/complete application stack/i)).toBeVisible();
+
+    // Academic credentials
+    await expect(
+      page.getByText("University of Moratuwa", { exact: true })
+    ).toBeVisible();
+    await expect(
+      page.getByText("BSc in Information Technology (Hons)")
+    ).toBeVisible();
+    await expect(page.getByText("3.70 / 4.00")).toBeVisible();
+    await expect(page.getByText("2024 — Present")).toBeVisible();
+
+    // Academic foundations
+    await expect(page.getByText("Data Structures & Algorithms")).toBeVisible();
+    await expect(page.getByText("Operating Systems")).toBeVisible();
+  });
+
+  test("activates About navigation item with aria-current='location' when scrolled into view", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    const aboutLink = page.getByRole("link", { name: "About" }).first();
+    await expect(aboutLink).not.toHaveAttribute("aria-current", "location");
+
+    // Scroll About section into view
+    const aboutSection = page.locator("#about");
+    await aboutSection.scrollIntoViewIfNeeded();
+
+    // Wait for IntersectionObserver and active nav state
+    await expect(aboutLink).toHaveAttribute("aria-current", "location", {
+      timeout: 5000,
+    });
+  });
+
   test("opens mobile navigation menu, traps focus, and closes with escape", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto("/");

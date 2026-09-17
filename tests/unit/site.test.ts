@@ -11,4 +11,24 @@ describe("Site Configuration Integrity", () => {
     expect(siteConfig.email).toBe("dulanprabashwara@gmail.com");
     expect(siteConfig.resumePath).toBe("/resume/Dulan-Prabashwara-CV.pdf");
   });
+
+  it("contains verified academic foundations without duplicates or empty values", () => {
+    expect(siteConfig.foundations).toBeDefined();
+    expect(siteConfig.foundations.length).toBeGreaterThanOrEqual(6);
+    expect(new Set(siteConfig.foundations).size).toBe(
+      siteConfig.foundations.length,
+    );
+    for (const f of siteConfig.foundations) {
+      expect(typeof f).toBe("string");
+      expect(f.trim().length).toBeGreaterThan(0);
+    }
+    expect(siteConfig.foundations).toContain("Data Structures & Algorithms");
+    expect(siteConfig.foundations).toContain("Object-Oriented Programming");
+    expect(siteConfig.foundations).toContain("Software Engineering");
+    expect(siteConfig.foundations).toContain(
+      "Object-Oriented Analysis & Design",
+    );
+    expect(siteConfig.foundations).toContain("Database Management Systems");
+    expect(siteConfig.foundations).toContain("Operating Systems");
+  });
 });

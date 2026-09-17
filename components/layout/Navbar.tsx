@@ -68,6 +68,7 @@ export function Navbar() {
                 <li key={item.href} className="relative">
                   <a
                     href={item.href}
+                    aria-current={isActive ? "location" : undefined}
                     className={`relative z-10 px-3.5 py-1.5 text-sm font-medium transition-colors rounded-full focus-visible:outline-2 focus-visible:outline-emerald ${
                       isActive
                         ? "text-text-dark-primary font-semibold"
