@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { skillGroups, techNodes, techEdges } from "@/data/skills";
+import { skillGroups, techNodes, techEdges, featuredTechnologies } from "@/data/skills";
 
 describe("Skills Data Integrity", () => {
   it("contains unique group IDs", () => {
@@ -27,5 +27,18 @@ describe("Skills Data Integrity", () => {
       expect(nodeIds.has(edge.from)).toBe(true);
       expect(nodeIds.has(edge.to)).toBe(true);
     }
+  });
+
+  it("contains 12 unique, curated featured technologies for the marquee", () => {
+    expect(featuredTechnologies).toHaveLength(12);
+    const uniqueSet = new Set(featuredTechnologies);
+    expect(uniqueSet.size).toBe(12);
+
+    expect(featuredTechnologies).toContain("Next.js");
+    expect(featuredTechnologies).toContain("TypeScript");
+    expect(featuredTechnologies).toContain("Spring Boot");
+    expect(featuredTechnologies).toContain("PostgreSQL");
+    expect(featuredTechnologies).toContain("Docker");
+    expect(featuredTechnologies).toContain("REST APIs");
   });
 });

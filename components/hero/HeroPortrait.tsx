@@ -1,7 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+} from "motion/react";
 import { DURATIONS, EASINGS, SPRINGS } from "@/lib/animations";
 import { useFinePointer } from "@/lib/useFinePointer";
 
@@ -17,14 +22,8 @@ export function HeroPortrait() {
   const portraitX = useSpring(mouseX, SPRINGS.soft);
   const portraitY = useSpring(mouseY, SPRINGS.soft);
 
-  const glowX = useSpring(
-    useMotionValue(0),
-    SPRINGS.soft
-  );
-  const glowY = useSpring(
-    useMotionValue(0),
-    SPRINGS.soft
-  );
+  const glowX = useSpring(useMotionValue(0), SPRINGS.soft);
+  const glowY = useSpring(useMotionValue(0), SPRINGS.soft);
 
   const isInteractive = canParallax && !shouldReduceMotion;
 

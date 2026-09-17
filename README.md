@@ -29,15 +29,15 @@ University of Moratuwa — BSc (Hons) in Information Technology
 
 ## Current Development Status
 
-**Phase 6 — Cinematic Hero Complete**
+**Phase 7 — Technology Marquee Complete**
 
-- **Cinematic Hero**: `components/hero/Hero.tsx` rendering within `min-h-[100svh]` on the dark teal palette (`#061A16`), structured cleanly as a Server Component.
-- **GSAP SplitText Title**: `components/hero/HeroTitleAnimation.tsx` with isolated GSAP SplitText masked line reveal, `document.fonts.ready` synchronization, `gsap.context()` cleanup, and accessible single H1 name (`aria-label="Dulan Prabashwara"`).
-- **Choreographed Motion Entrance**: `components/hero/HeroContent.tsx` sequencing availability indicator, role, description, magnetic CTA, and social links with approved durations and easing.
-- **Subtle Magnetic CTA**: `components/ui/MagneticButton.tsx` offering a restrained ±4px hover displacement on fine-pointer desktop, cleanly disabled for touch and reduced motion.
-- **4-Layer Restrained Background**: `components/hero/HeroBackground.tsx` and `components/ui/MotionGrid.tsx` with oversized 30s slow grid drift, atmospheric emerald radial glow, and technical SVG coordinates.
-- **Portrait Placeholder & Parallax**: `components/hero/HeroPortrait.tsx` with integrated silhouette composition, DP monogram, bottom gradient mask, and fine-pointer desktop parallax via MotionValues.
-- **Accessibility Verification**: Tested with axe-core for zero critical/serious violations across desktop and mobile viewports.
+- **Technology Marquee**: `components/TechMarquee.tsx` positioned directly below the Hero in the dark visual family (`#08231E`, `border-mint/10`), providing a fast technical snapshot of full-stack engineering breadth.
+- **Curated Technology Snapshot**: Single source of truth in `data/skills.ts` (`featuredTechnologies`: Next.js, TypeScript, Spring Boot, React, PostgreSQL, Node.js, Java, WebSocket, Docker, Prisma, MongoDB, REST APIs).
+- **Desktop Two-Row Opposing Motion**: Two opposing rows on desktop (`>= 1024px`) moving continuously with linear easing (`x: 0% → -50%` and `x: -50% → 0%`).
+- **Mobile One-Row Continuous Track**: Single continuous track on mobile and tablet (`< 1024px`) for compact vertical efficiency.
+- **Reduced Motion Static Layout**: When `prefers-reduced-motion: reduce` is enabled, switches to an intentionally designed static wrapping flex layout with no horizontal translation.
+- **Accessibility & Canonical Representation**: Visual looping tracks marked `aria-hidden="true"`, while assistive technologies receive a canonical single-instance list (`<ul className="sr-only">`) under `<h2 className="sr-only">Featured technologies</h2>`. Zero duplicate screen reader announcements.
+- **Zero New Dependencies**: Implemented natively using existing Motion foundation without external marquee packages.
 
 ---
 

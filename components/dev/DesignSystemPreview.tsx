@@ -63,7 +63,8 @@ export function DesignSystemPreview() {
                     Body Large (Poppins 500)
                   </span>
                   <p className="font-body text-lg text-ink font-medium">
-                    Full-stack developer with focus on scalable backend architecture and responsive systems.
+                    Full-stack developer with focus on scalable backend
+                    architecture and responsive systems.
                   </p>
                 </div>
 
@@ -72,10 +73,12 @@ export function DesignSystemPreview() {
                     Body Regular &amp; Muted (Poppins 400)
                   </span>
                   <p className="font-body text-base text-ink max-w-2xl leading-relaxed">
-                    Undergraduate at University of Moratuwa pursuing BSc in Information Technology (Hons) with a CGPA of 3.70 / 4.00.
+                    Undergraduate at University of Moratuwa pursuing BSc in
+                    Information Technology (Hons) with a CGPA of 3.70 / 4.00.
                   </p>
                   <p className="font-body text-sm text-text-muted mt-1">
-                    Currently seeking Software Engineering Internship opportunities.
+                    Currently seeking Software Engineering Internship
+                    opportunities.
                   </p>
                 </div>
               </div>
@@ -159,10 +162,12 @@ export function DesignSystemPreview() {
                     Body Dark Primary &amp; Secondary (Poppins 400)
                   </span>
                   <p className="font-body text-base text-text-dark-primary max-w-2xl leading-relaxed">
-                    Production systems featuring Firebase sync, STOMP WebSockets, Redis Streams, and automated deployment.
+                    Production systems featuring Firebase sync, STOMP
+                    WebSockets, Redis Streams, and automated deployment.
                   </p>
                   <p className="font-body text-sm text-text-dark-secondary mt-1">
-                    Balanced engineering aesthetic with emerald accents and accessible contrast ratios.
+                    Balanced engineering aesthetic with emerald accents and
+                    accessible contrast ratios.
                   </p>
                 </div>
               </div>
@@ -218,7 +223,8 @@ export function DesignSystemPreview() {
                   Surface Raised (--surface-raised: #123A32)
                 </span>
                 <p className="font-body text-sm text-text-dark-secondary">
-                  Raised surface for interactive states, dropdowns, and floating pills.
+                  Raised surface for interactive states, dropdowns, and floating
+                  pills.
                 </p>
               </div>
             </div>

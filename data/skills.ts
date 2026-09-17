@@ -94,3 +94,21 @@ export const techEdges = [
   { from: "docker", to: "spring-boot" },
   { from: "docker", to: "nodejs" },
 ] as const satisfies readonly TechEdge[];
+
+export const featuredTechnologies = [
+  "Next.js",
+  "TypeScript",
+  "Spring Boot",
+  "React",
+  "PostgreSQL",
+  "Node.js",
+  "Java",
+  "WebSocket",
+  "Docker",
+  "Prisma",
+  "MongoDB",
+  "REST APIs",
+] as const;
+
+export type FeaturedTechnology = (typeof featuredTechnologies)[number];
+

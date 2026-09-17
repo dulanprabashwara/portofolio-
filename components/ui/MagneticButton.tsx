@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
+import {
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+} from "motion/react";
 import { SPRINGS } from "@/lib/animations";
 import { useFinePointer } from "@/lib/useFinePointer";
 
@@ -36,7 +41,8 @@ export function MagneticButton({
     const centerY = rect.top + rect.height / 2;
 
     const deltaX = ((e.clientX - centerX) / (rect.width / 2)) * maxDisplacement;
-    const deltaY = ((e.clientY - centerY) / (rect.height / 2)) * maxDisplacement;
+    const deltaY =
+      ((e.clientY - centerY) / (rect.height / 2)) * maxDisplacement;
 
     x.set(deltaX);
     y.set(deltaY);

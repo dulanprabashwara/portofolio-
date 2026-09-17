@@ -81,6 +81,49 @@ test.describe("Homepage and Hero Section", () => {
     await expect(exploreCta).toBeVisible();
   });
 
+  test("displays Technology Marquee following Hero with curated technologies", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    const marqueeHeading = page.getByRole("heading", {
+      level: 2,
+      name: /featured technologies/i,
+    });
+    await expect(marqueeHeading).toBeAttached();
+
+    // Verify canonical technology list items are present in DOM
+    const nextjsItem = page.getByRole("listitem").filter({ hasText: "Next.js" });
+    await expect(nextjsItem).toBeAttached();
+
+    const springBootItem = page
+      .getByRole("listitem")
+      .filter({ hasText: "Spring Boot" });
+    await expect(springBootItem).toBeAttached();
+
+    const postgresItem = page
+      .getByRole("listitem")
+      .filter({ hasText: "PostgreSQL" });
+    await expect(postgresItem).toBeAttached();
+  });
+
+  test("renders Technology Marquee under reduced motion without horizontal overflow", async ({
+    page,
+  }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto("/");
+
+    const staticItem = page.getByText("Next.js").first();
+    await expect(staticItem).toBeVisible();
+
+    const hasHorizontalScroll = await page.evaluate(() => {
+      return document.documentElement.scrollWidth > window.innerWidth;
+    });
+    expect(hasHorizontalScroll).toBe(false);
+  });
+
   test("opens mobile navigation menu, traps focus, and closes with escape", async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
     await page.goto("/");

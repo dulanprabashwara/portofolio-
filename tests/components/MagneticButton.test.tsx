@@ -7,7 +7,7 @@ describe("MagneticButton Component", () => {
     render(
       <MagneticButton>
         <a href="#projects">Explore Projects ↗</a>
-      </MagneticButton>
+      </MagneticButton>,
     );
 
     const link = screen.getByRole("link", { name: "Explore Projects ↗" });

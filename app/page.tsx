@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { Hero } from "@/components/hero/Hero";
+import { TechMarquee } from "@/components/TechMarquee";
 import { DesignSystemPreview } from "@/components/dev/DesignSystemPreview";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="min-h-screen">
         <Hero />
+        <TechMarquee />
         <DesignSystemPreview />
       </main>
     </>

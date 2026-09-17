@@ -93,8 +93,9 @@ export function HeroContent() {
         className="max-w-xl"
       >
         <p className="font-body text-base sm:text-lg text-text-dark-secondary leading-relaxed">
-          I build full-stack applications that combine clean interfaces, reliable
-          backend systems, real-time experiences, and thoughtful engineering.
+          I build full-stack applications that combine clean interfaces,
+          reliable backend systems, real-time experiences, and thoughtful
+          engineering.
         </p>
       </motion.div>
 

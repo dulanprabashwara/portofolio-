@@ -17,7 +17,7 @@ describe("Hero Component", () => {
   it("renders availability indicator with approved copy", () => {
     render(<Hero />);
     const badge = screen.getByText(
-      /available for software engineering internships/i
+      /available for software engineering internships/i,
     );
     expect(badge).toBeInTheDocument();
   });
@@ -26,14 +26,14 @@ describe("Hero Component", () => {
     render(<Hero />);
     expect(
       screen.getByText(
-        /software engineering undergraduate & full-stack developer/i
-      )
+        /software engineering undergraduate & full-stack developer/i,
+      ),
     ).toBeInTheDocument();
 
     expect(
       screen.getByText(
-        /I build full-stack applications that combine clean interfaces, reliable backend systems, real-time experiences, and thoughtful engineering\./i
-      )
+        /I build full-stack applications that combine clean interfaces, reliable backend systems, real-time experiences, and thoughtful engineering\./i,
+      ),
     ).toBeInTheDocument();
   });
 
@@ -47,7 +47,7 @@ describe("Hero Component", () => {
   it("omits Download CV CTA button when CV asset is absent", () => {
     render(<Hero />);
     expect(
-      screen.queryByRole("link", { name: /download cv/i })
+      screen.queryByRole("link", { name: /download cv/i }),
     ).not.toBeInTheDocument();
   });
 
@@ -58,21 +58,21 @@ describe("Hero Component", () => {
     expect(githubLinks.length).toBeGreaterThan(0);
     expect(githubLinks[0]).toHaveAttribute(
       "href",
-      "https://github.com/dulanprabashwara"
+      "https://github.com/dulanprabashwara",
     );
 
     const linkedinLinks = screen.getAllByRole("link", { name: /linkedin/i });
     expect(linkedinLinks.length).toBeGreaterThan(0);
     expect(linkedinLinks[0]).toHaveAttribute(
       "href",
-      "https://www.linkedin.com/in/dulan-prabashwara/"
+      "https://www.linkedin.com/in/dulan-prabashwara/",
     );
 
     const emailLinks = screen.getAllByRole("link", { name: /email/i });
     expect(emailLinks.length).toBeGreaterThan(0);
     expect(emailLinks[0]).toHaveAttribute(
       "href",
-      "mailto:dulanprabashwara@gmail.com"
+      "mailto:dulanprabashwara@gmail.com",
     );
 
     // Verify no phone numbers anywhere
