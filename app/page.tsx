@@ -3,6 +3,7 @@ import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { Hero } from "@/components/hero/Hero";
 import { TechMarquee } from "@/components/TechMarquee";
 import { About } from "@/components/about/About";
+import { Skills } from "@/components/skills/Skills";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <Hero />
         <TechMarquee />
         <About />
+        <Skills />
       </main>
     </>
   );

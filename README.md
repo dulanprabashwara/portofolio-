@@ -29,14 +29,14 @@ University of Moratuwa — BSc (Hons) in Information Technology
 
 ## Current Development Status
 
-**Phase 8 — About Section Complete**
+**Phase 9 — Skills Bento & Interactive Technology Network Complete**
 
-- **Editorial Light About Section**: `components/about/About.tsx` and `components/about/AboutContent.tsx` introduce the first light-themed major section (`--off-white: #F7F9F7`, `--ink: #10201B`), providing a calm, editorial contrast after the cinematic Hero and Marquee.
-- **Dark-to-Light Architectural Transition**: Seamless top gradient band (`from-bg-dark to-off-white`) owned by the About section, bridging `#08231E` to `#F7F9F7` without cartoonish shapes or decorative clutter.
-- **Verified Professional Narrative**: Structured 4-paragraph story highlighting full-stack engineering across Next.js, React, Spring Boot, databases, real-time messaging, and multi-domain software systems.
-- **Academic Credentials & Foundations**: Semantic definition list (`<dl>`, `<dt>`, `<dd>`) for University of Moratuwa, CGPA (3.70 / 4.00), BSc in Information Technology (Hons), and 2024 — Present; paired with semantic coursework chips (`<ul>`, `<li>`) sourced centrally from `data/site.ts`.
-- **Active Navigation Tracking**: First real destination `#about` automatically tracked by `useActiveSection` IntersectionObserver, activating the desktop floating nav indicator and exposing `aria-current="location"`.
-- **Production Composition & Clean Dev Boundaries**: `DesignSystemPreview` cleanly decoupled from public homepage flow while preserved in the repo for dev reference.
+- **Categorized Skills Bento Grid**: `components/skills/SkillBento.tsx` and `components/skills/SkillCard.tsx` present 6 verified skill categories (Frontend, Backend & APIs, Databases & Data, Languages, DevOps & Tools, Engineering) in a responsive 12-column editorial layout with card-level stagger animations.
+- **Interactive Technology Network**: `components/skills/TechNetwork.tsx` maps 9 core full-stack technologies and 10 relationship edges using an accessible layered architecture (SVG connection layer + native HTML button nodes + dynamic relationship summary).
+- **Data-Driven Relationship Derivation**: Selecting or hovering a node dynamically derives direct connections from immutable domain data (`data/skills.ts`) with clear visual emphasis and screen reader live region announcements (`aria-live="polite"`).
+- **Zero-Crossing Geometry & Touch Ergonomics**: Normalized percentage coordinates designed for zero line crossings on desktop and a clean touch-friendly vertical ladder on mobile with $\ge 44\text{px}$ touch targets.
+- **Full Accessibility & Reduced Motion Support**: Native `<button type="button">` keyboard navigation, `aria-hidden="true"` SVG layer, zero subjective skill percentages or ratings, and instantaneous static presentation under `prefers-reduced-motion: reduce`.
+- **Active Navigation Integration**: Section `#skills` is automatically observed by `useActiveSection`, seamlessly transitioning desktop navigation state and applying `aria-current="location"`.
 
 ---
 

@@ -38,12 +38,27 @@ describe("Production Homepage Composition", () => {
   it("does NOT render the dev preview banner on the production page", () => {
     render(<Home />);
 
-    expect(
-      screen.queryByText(/phase 2 visual foundation/i),
-    ).not.toBeInTheDocument();
-    expect(
-      screen.queryByText(/design system preview/i),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText(/phase 2 visual foundation/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/design system preview/i)).not.toBeInTheDocument();
     expect(screen.queryByText("02 / PROJECTS")).not.toBeInTheDocument();
+  });
+
+  it("renders Skills section with Bento grid and TechNetwork", () => {
+    render(<Home />);
+
+    expect(screen.getByText("02 / SKILLS")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: /tools are temporary\. engineering fundamentals travel\./i,
+      }),
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByRole("heading", {
+        level: 3,
+        name: /how the stack connects/i,
+      }),
+    ).toBeInTheDocument();
   });
 });

@@ -94,15 +94,20 @@ test.describe("Homepage and Hero Section", () => {
     await expect(marqueeHeading).toBeAttached();
 
     // Verify canonical technology list items are present in DOM
-    const nextjsItem = page.getByRole("listitem").filter({ hasText: "Next.js" });
+    const marqueeSection = page.locator(
+      'section[aria-labelledby="featured-tech-title"]',
+    );
+    const nextjsItem = marqueeSection
+      .getByRole("listitem")
+      .filter({ hasText: "Next.js" });
     await expect(nextjsItem).toBeAttached();
 
-    const springBootItem = page
+    const springBootItem = marqueeSection
       .getByRole("listitem")
       .filter({ hasText: "Spring Boot" });
     await expect(springBootItem).toBeAttached();
 
-    const postgresItem = page
+    const postgresItem = marqueeSection
       .getByRole("listitem")
       .filter({ hasText: "PostgreSQL" });
     await expect(postgresItem).toBeAttached();
@@ -159,8 +164,10 @@ test.describe("Homepage and Hero Section", () => {
     await expect(page.getByText("2024 — Present")).toBeVisible();
 
     // Academic foundations
-    await expect(page.getByText("Data Structures & Algorithms")).toBeVisible();
-    await expect(page.getByText("Operating Systems")).toBeVisible();
+    await expect(
+      aboutSection.getByText("Data Structures & Algorithms")
+    ).toBeVisible();
+    await expect(aboutSection.getByText("Operating Systems")).toBeVisible();
   });
 
   test("activates About navigation item with aria-current='location' when scrolled into view", async ({
@@ -178,6 +185,81 @@ test.describe("Homepage and Hero Section", () => {
 
     // Wait for IntersectionObserver and active nav state
     await expect(aboutLink).toHaveAttribute("aria-current", "location", {
+      timeout: 5000,
+    });
+  });
+
+  test("displays Skills section with Bento grid and interactive TechNetwork at desktop-1440", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    const skillsSection = page.locator("#skills");
+    await expect(skillsSection).toBeVisible();
+
+    const eyebrow = page.getByText("02 / SKILLS");
+    await expect(eyebrow).toBeVisible();
+
+    const heading = page.getByRole("heading", {
+      level: 2,
+      name: /tools are temporary\. engineering fundamentals travel\./i,
+    });
+    await expect(heading).toBeVisible();
+
+    // Verify all 6 category titles
+    await expect(
+      page.getByRole("heading", { level: 3, name: /^frontend$/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 3, name: /^backend & apis$/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 3, name: /^databases & data$/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 3, name: /^languages$/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 3, name: /^devops & tools$/i }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { level: 3, name: /^engineering$/i }),
+    ).toBeVisible();
+
+    // Verify TechNetwork interaction
+    const networkTitle = page.getByRole("heading", {
+      level: 3,
+      name: /how the stack connects/i,
+    });
+    await expect(networkTitle).toBeVisible();
+
+    const nextjsNode = page.getByRole("button", {
+      name: /highlight technologies related to next\.js/i,
+    });
+    await expect(nextjsNode).toBeVisible();
+
+    await nextjsNode.click();
+
+    // Expect relationship summary to display connected technologies
+    await expect(page.getByText(/react • typescript/i)).toBeVisible();
+  });
+
+  test("activates Skills navigation item with aria-current='location' when scrolled into view", async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/");
+
+    const skillsLink = page.getByRole("link", { name: "Skills" }).first();
+    await expect(skillsLink).not.toHaveAttribute("aria-current", "location");
+
+    // Scroll Skills section into view
+    const skillsSection = page.locator("#skills");
+    await skillsSection.scrollIntoViewIfNeeded();
+
+    // Wait for IntersectionObserver and active nav state
+    await expect(skillsLink).toHaveAttribute("aria-current", "location", {
       timeout: 5000,
     });
   });
