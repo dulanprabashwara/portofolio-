@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { createPortal } from "react-dom";
 import { useModalBehavior } from "@/hooks/use-modal-behavior";
 
 export type NavItem = {
@@ -33,9 +34,9 @@ export function MobileMenu({
     triggerRef,
   });
 
-  if (!open) return null;
+  if (!open || typeof document === "undefined") return null;
 
-  return (
+  return createPortal(
     <div
       ref={containerRef}
       id="mobile-menu"
@@ -108,6 +109,7 @@ export function MobileMenu({
           </span>
         </a>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
+import { createPortal } from "react-dom";
 import { NeutralMedia } from "@/components/media/neutral-media";
 import { useModalBehavior } from "@/hooks/use-modal-behavior";
 import type { Project } from "@/types/content";
@@ -29,9 +30,9 @@ export function ProjectDialog({
     triggerRef,
   });
 
-  if (!open || !project) return null;
+  if (!open || !project || typeof document === "undefined") return null;
 
-  return (
+  return createPortal(
     <div
       ref={containerRef}
       role="dialog"
@@ -157,6 +158,7 @@ export function ProjectDialog({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

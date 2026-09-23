@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRef } from "react";
+import { createPortal } from "react-dom";
 import { useModalBehavior } from "@/hooks/use-modal-behavior";
 import type { Achievement } from "@/types/content";
 
@@ -27,9 +28,9 @@ export function ImageLightbox({
     triggerRef,
   });
 
-  if (!open || !achievement || !achievement.image) return null;
+  if (!open || !achievement || !achievement.image || typeof document === "undefined") return null;
 
-  return (
+  return createPortal(
     <div
       ref={containerRef}
       role="dialog"
@@ -86,6 +87,7 @@ export function ImageLightbox({
           <span>{achievement.date}</span>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
