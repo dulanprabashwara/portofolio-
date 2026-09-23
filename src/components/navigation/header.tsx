@@ -22,7 +22,7 @@ export function Header() {
   const activeSection = useActiveSection(SECTION_IDS);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-[var(--border,#ddd6e3)] bg-[var(--pearl,#f7f4fa)]/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-[var(--border,#ddd6e3)]/60 bg-white/80 backdrop-blur-md shadow-[0_4px_20px_-4px_rgba(35,29,43,0.03)] transition-all">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand / Logo */}
         <a
@@ -50,13 +50,19 @@ export function Header() {
                 key={item.id}
                 href={item.href}
                 aria-current={isActive ? "location" : undefined}
-                className={`rounded px-3 py-1.5 transition-colors ${
+                className={`relative px-3 py-2 transition-colors duration-200 ${
                   isActive
-                    ? "bg-[var(--soft-green,#e8f8ee)] text-[var(--green,#2fae63)] font-semibold"
-                    : "text-[var(--muted-plum,#655d6f)] hover:bg-[var(--mist,#f0ebf4)] hover:text-[var(--plum,#231d2b)]"
+                    ? "text-[var(--green,#2fae63)] font-semibold"
+                    : "text-[var(--muted-plum,#655d6f)] hover:text-[var(--plum,#231d2b)]"
                 }`}
               >
                 {item.label}
+                {isActive && (
+                  <span
+                    className="absolute bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-[var(--green,#2fae63)]"
+                    aria-hidden="true"
+                  />
+                )}
               </a>
             );
           })}
