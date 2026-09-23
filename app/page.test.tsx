@@ -1,15 +1,24 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-
 import Page from './page'
 
 describe('portfolio page', () => {
-  it('renders the portfolio main landmark and owner name', () => {
-    render(<Page />)
-
-    expect(screen.getByRole('main')).toBeInTheDocument()
+  it('composes sections in required order', () => {
+    const { container } = render(<Page />)
     expect(
-      screen.getByRole('heading', { level: 1, name: /Dulan Prabashwara/i }),
-    ).toBeInTheDocument()
+      Array.from(container.querySelectorAll('main > section[id]')).map((n) => n.id)
+    ).toEqual([
+      'hero',
+      'technology',
+      'about',
+      'projects',
+      'toolkit',
+      'approach',
+      'journey',
+      'recognition',
+      'beyond-code',
+      'contact',
+    ])
+    expect(screen.getByRole('contentinfo')).toBeInTheDocument()
   })
 })
