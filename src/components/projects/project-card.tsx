@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { NeutralMedia } from '@/components/media/neutral-media'
-import type { Project } from '@/types/content'
-import { ProjectActions } from './project-actions'
+import Image from "next/image";
+import { NeutralMedia } from "@/components/media/neutral-media";
+import type { Project } from "@/types/content";
+import { ProjectActions } from "./project-actions";
 
 type ProjectCardProps = {
-  project: Project
-  index: number
-  onOpen: (project: Project, triggerEl?: HTMLElement) => void
-}
+  project: Project;
+  index: number;
+  onOpen: (project: Project, triggerEl?: HTMLElement) => void;
+};
 
 export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
-  const isReversed = index % 2 === 1
+  const isReversed = index % 2 === 1;
 
   return (
     <article className="group rounded-2xl border border-[var(--border,#ddd6e3)] bg-white p-6 sm:p-8 lg:p-10 shadow-xs transition-shadow hover:shadow-md">
@@ -20,7 +20,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
         {/* Visual / Media Trigger */}
         <div
           className={`lg:col-span-6 ${
-            isReversed ? 'lg:order-2' : 'lg:order-1'
+            isReversed ? "lg:order-2" : "lg:order-1"
           } overflow-hidden rounded-xl`}
         >
           <button
@@ -48,7 +48,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
         {/* Details Column */}
         <div
           className={`lg:col-span-6 ${
-            isReversed ? 'lg:order-1' : 'lg:order-2'
+            isReversed ? "lg:order-1" : "lg:order-2"
           } flex flex-col items-start gap-4 sm:gap-5`}
         >
           {/* Eyebrow */}
@@ -114,5 +114,5 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
         </div>
       </div>
     </article>
-  )
+  );
 }

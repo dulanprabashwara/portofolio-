@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
-import { useRef, useState } from 'react'
-import { projects } from '@/data/projects'
-import type { Project } from '@/types/content'
-import { ProjectCard } from './project-card'
-import { ProjectDialog } from './project-dialog'
+import { useRef, useState } from "react";
+import { projects } from "@/data/projects";
+import type { Project } from "@/types/content";
+import { ProjectCard } from "./project-card";
+import { ProjectDialog } from "./project-dialog";
 
 export function ProjectList() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
-  const [isOpen, setIsOpen] = useState(false)
-  const triggerRef = useRef<HTMLElement | null>(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef<HTMLElement | null>(null);
 
   const handleOpen = (project: Project, triggerEl?: HTMLElement) => {
     if (triggerEl) {
-      triggerRef.current = triggerEl
+      triggerRef.current = triggerEl;
     }
-    setSelectedProject(project)
-    setIsOpen(true)
-  }
+    setSelectedProject(project);
+    setIsOpen(true);
+  };
 
   const handleClose = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 border-b border-[var(--border,#ddd6e3)]">
@@ -58,5 +58,5 @@ export function ProjectList() {
         triggerRef={triggerRef}
       />
     </div>
-  )
+  );
 }

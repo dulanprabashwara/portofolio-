@@ -1,30 +1,36 @@
-'use client'
+"use client";
 
-import { useSyncExternalStore } from 'react'
+import { useSyncExternalStore } from "react";
 
 function subscribe(callback: () => void) {
-  if (typeof window === 'undefined' || typeof window.matchMedia === 'undefined') {
-    return () => {}
+  if (
+    typeof window === "undefined" ||
+    typeof window.matchMedia === "undefined"
+  ) {
+    return () => {};
   }
 
-  const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
-  mediaQuery.addEventListener('change', callback)
+  const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  mediaQuery.addEventListener("change", callback);
   return () => {
-    mediaQuery.removeEventListener('change', callback)
-  }
+    mediaQuery.removeEventListener("change", callback);
+  };
 }
 
 function getSnapshot(): boolean {
-  if (typeof window === 'undefined' || typeof window.matchMedia === 'undefined') {
-    return false
+  if (
+    typeof window === "undefined" ||
+    typeof window.matchMedia === "undefined"
+  ) {
+    return false;
   }
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
 function getServerSnapshot(): boolean {
-  return false
+  return false;
 }
 
 export function useReducedMotion(): boolean {
-  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }

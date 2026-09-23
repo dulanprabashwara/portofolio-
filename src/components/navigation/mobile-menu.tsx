@@ -1,21 +1,21 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import { useModalBehavior } from '@/hooks/use-modal-behavior'
+import { useRef } from "react";
+import { useModalBehavior } from "@/hooks/use-modal-behavior";
 
 export type NavItem = {
-  label: string
-  href: string
-  id: string
-}
+  label: string;
+  href: string;
+  id: string;
+};
 
 type MobileMenuProps = {
-  open: boolean
-  onClose: () => void
-  navItems: readonly NavItem[]
-  activeSection: string | null
-  triggerRef: React.RefObject<HTMLButtonElement | null>
-}
+  open: boolean;
+  onClose: () => void;
+  navItems: readonly NavItem[];
+  activeSection: string | null;
+  triggerRef: React.RefObject<HTMLButtonElement | null>;
+};
 
 export function MobileMenu({
   open,
@@ -24,16 +24,16 @@ export function MobileMenu({
   activeSection,
   triggerRef,
 }: MobileMenuProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useModalBehavior({
     open,
     onClose,
     containerRef,
     triggerRef,
-  })
+  });
 
-  if (!open) return null
+  if (!open) return null;
 
   return (
     <div
@@ -44,7 +44,7 @@ export function MobileMenu({
       aria-label="Navigation"
       className="fixed inset-0 z-50 flex flex-col justify-between bg-[var(--pearl,#f7f4fa)]/95 backdrop-blur-md p-6 sm:p-8 md:hidden"
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose()
+        if (e.target === e.currentTarget) onClose();
       }}
     >
       <div className="flex items-center justify-between border-b border-[var(--border,#ddd6e3)] pb-4">
@@ -53,7 +53,10 @@ export function MobileMenu({
           onClick={onClose}
           className="flex items-center gap-2 font-mono font-bold tracking-tight text-[var(--plum,#231d2b)] text-lg"
         >
-          <span className="material-symbols-outlined text-[var(--green,#2fae63)]" aria-hidden>
+          <span
+            className="material-symbols-outlined text-[var(--green,#2fae63)]"
+            aria-hidden
+          >
             terminal
           </span>
           <span>DULAN.</span>
@@ -72,22 +75,22 @@ export function MobileMenu({
 
       <nav className="my-auto flex flex-col gap-4 py-8">
         {navItems.map((item) => {
-          const isActive = activeSection === item.id
+          const isActive = activeSection === item.id;
           return (
             <a
               key={item.id}
               href={item.href}
               onClick={onClose}
-              aria-current={isActive ? 'location' : undefined}
+              aria-current={isActive ? "location" : undefined}
               className={`font-mono text-xl tracking-wider uppercase transition-colors py-2 px-3 rounded-md ${
                 isActive
-                  ? 'text-[var(--green,#2fae63)] bg-[var(--soft-green,#e8f8ee)] font-semibold'
-                  : 'text-[var(--plum,#231d2b)] hover:text-[var(--green,#2fae63)] hover:bg-[var(--mist,#f0ebf4)]'
+                  ? "text-[var(--green,#2fae63)] bg-[var(--soft-green,#e8f8ee)] font-semibold"
+                  : "text-[var(--plum,#231d2b)] hover:text-[var(--green,#2fae63)] hover:bg-[var(--mist,#f0ebf4)]"
               }`}
             >
               {item.label}
             </a>
-          )
+          );
         })}
       </nav>
 
@@ -106,5 +109,5 @@ export function MobileMenu({
         </a>
       </div>
     </div>
-  )
+  );
 }

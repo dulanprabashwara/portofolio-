@@ -1,25 +1,25 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { NeutralMedia } from '@/components/media/neutral-media'
-import { useReducedMotion } from '@/hooks/use-reduced-motion'
+import { useState } from "react";
+import { NeutralMedia } from "@/components/media/neutral-media";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 export function Hero() {
-  const shouldReduceMotion = useReducedMotion()
-  const [offset, setOffset] = useState({ x: 0, y: 0 })
+  const shouldReduceMotion = useReducedMotion();
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (shouldReduceMotion) return
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2)
-    const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2)
+    if (shouldReduceMotion) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2);
+    const y = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2);
     // Small desktop-only translation capped at 8px
-    setOffset({ x: x * 8, y: y * 8 })
-  }
+    setOffset({ x: x * 8, y: y * 8 });
+  };
 
   const handleMouseLeave = () => {
-    setOffset({ x: 0, y: 0 })
-  }
+    setOffset({ x: 0, y: 0 });
+  };
 
   return (
     <div
@@ -59,8 +59,9 @@ export function Hero() {
 
           {/* Supporting Copy */}
           <p className="max-w-xl text-base sm:text-lg text-[var(--muted-plum,#655d6f)] leading-relaxed">
-            Information Technology undergraduate at the University of Moratuwa building full-stack
-            applications, real-time systems, and intelligent platforms with clean architecture.
+            Information Technology undergraduate at the University of Moratuwa
+            building full-stack applications, real-time systems, and intelligent
+            platforms with clean architecture.
           </p>
 
           {/* Actions */}
@@ -95,7 +96,7 @@ export function Hero() {
             className="portrait-motion transition-transform duration-200 ease-out"
             style={{
               transform: shouldReduceMotion
-                ? 'none'
+                ? "none"
                 : `translate3d(${offset.x}px, ${offset.y}px, 0)`,
             }}
           >
@@ -104,5 +105,5 @@ export function Hero() {
         </div>
       </div>
     </div>
-  )
+  );
 }

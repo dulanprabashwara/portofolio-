@@ -1,12 +1,12 @@
 const COURSES = [
-  'Programming Fundamentals',
-  'Data Structures and Algorithms',
-  'Object-Oriented Programming',
-  'Software Engineering',
-  'Object-Oriented Analysis and Design',
-  'Database Management Systems',
-  'Operating Systems',
-] as const
+  "Programming Fundamentals",
+  "Data Structures and Algorithms",
+  "Object-Oriented Programming",
+  "Software Engineering",
+  "Object-Oriented Analysis and Design",
+  "Database Management Systems",
+  "Operating Systems",
+] as const;
 
 export function About() {
   return (
@@ -30,13 +30,15 @@ export function About() {
           {/* Narrative paragraphs */}
           <div className="space-y-4 text-base sm:text-lg text-[var(--muted-plum,#655d6f)] leading-relaxed">
             <p>
-              I&apos;m Dulan Prabashwara, an Information Technology undergraduate at the University
-              of Moratuwa with a strong interest in full-stack software engineering.
+              I&apos;m Dulan Prabashwara, an Information Technology
+              undergraduate at the University of Moratuwa with a strong interest
+              in full-stack software engineering.
             </p>
             <p>
-              I enjoy working across the complete application stack — from building responsive
-              interfaces with Next.js and React to designing backend services, databases,
-              authentication flows, real-time communication, and deployment pipelines.
+              I enjoy working across the complete application stack — from
+              building responsive interfaces with Next.js and React to designing
+              backend services, databases, authentication flows, real-time
+              communication, and deployment pipelines.
             </p>
           </div>
 
@@ -103,5 +105,5 @@ export function About() {
         </div>
       </div>
     </div>
-  )
+  );
 }

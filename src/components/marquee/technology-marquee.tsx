@@ -1,7 +1,9 @@
-import { skillGroups } from '@/data/skills'
+import { skillGroups } from "@/data/skills";
 
 export function TechnologyMarquee() {
-  const uniqueSkills = Array.from(new Set(skillGroups.flatMap((group) => group.items)))
+  const uniqueSkills = Array.from(
+    new Set(skillGroups.flatMap((group) => group.items)),
+  );
 
   return (
     <div
@@ -16,7 +18,10 @@ export function TechnologyMarquee() {
               key={tech}
               className="flex items-center gap-2 text-xs sm:text-sm font-mono tracking-wider text-[var(--muted-plum,#655d6f)] uppercase"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--green,#2fae63)]/60" aria-hidden />
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-[var(--green,#2fae63)]/60"
+                aria-hidden
+              />
               <span>{tech}</span>
             </div>
           ))}
@@ -32,12 +37,15 @@ export function TechnologyMarquee() {
               key={`dup-${tech}-${idx}`}
               className="flex items-center gap-2 text-xs sm:text-sm font-mono tracking-wider text-[var(--muted-plum,#655d6f)] uppercase"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--green,#2fae63)]/60" aria-hidden />
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-[var(--green,#2fae63)]/60"
+                aria-hidden
+              />
               <span>{tech}</span>
             </div>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }

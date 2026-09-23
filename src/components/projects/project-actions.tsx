@@ -1,19 +1,22 @@
-import type { Project } from '@/types/content'
+import type { Project } from "@/types/content";
 
 const validUrl = (value: string | null): string | null => {
-  if (!value) return null
-  const trimmed = value.trim()
-  return trimmed.length > 0 ? trimmed : null
-}
+  if (!value) return null;
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : null;
+};
 
 export function ProjectActions({ project }: { project: Project }) {
-  const live = validUrl(project.liveUrl)
-  const repository = validUrl(project.repositoryUrl)
+  const live = validUrl(project.liveUrl);
+  const repository = validUrl(project.repositoryUrl);
 
-  if (!live && !repository) return null
+  if (!live && !repository) return null;
 
   return (
-    <div aria-label={`${project.title} links`} className="flex flex-wrap items-center gap-4">
+    <div
+      aria-label={`${project.title} links`}
+      className="flex flex-wrap items-center gap-4"
+    >
       {live && (
         <a
           href={live}
@@ -41,5 +44,5 @@ export function ProjectActions({ project }: { project: Project }) {
         </a>
       )}
     </div>
-  )
+  );
 }

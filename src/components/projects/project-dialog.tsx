@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useRef } from 'react'
-import { NeutralMedia } from '@/components/media/neutral-media'
-import { useModalBehavior } from '@/hooks/use-modal-behavior'
-import type { Project } from '@/types/content'
-import { ProjectActions } from './project-actions'
+import Image from "next/image";
+import { useRef } from "react";
+import { NeutralMedia } from "@/components/media/neutral-media";
+import { useModalBehavior } from "@/hooks/use-modal-behavior";
+import type { Project } from "@/types/content";
+import { ProjectActions } from "./project-actions";
 
 type ProjectDialogProps = {
-  project: Project | null
-  open: boolean
-  onClose: () => void
-  triggerRef?: React.RefObject<HTMLElement | null>
-}
+  project: Project | null;
+  open: boolean;
+  onClose: () => void;
+  triggerRef?: React.RefObject<HTMLElement | null>;
+};
 
 export function ProjectDialog({
   project,
@@ -20,16 +20,16 @@ export function ProjectDialog({
   onClose,
   triggerRef,
 }: ProjectDialogProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useModalBehavior({
     open,
     onClose,
     containerRef,
     triggerRef,
-  })
+  });
 
-  if (!open || !project) return null
+  if (!open || !project) return null;
 
   return (
     <div
@@ -39,7 +39,7 @@ export function ProjectDialog({
       aria-label={project.title}
       className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--plum,#231d2b)]/60 backdrop-blur-xs p-4 sm:p-6 lg:p-8 overflow-y-auto"
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose()
+        if (e.target === e.currentTarget) onClose();
       }}
     >
       <div
@@ -149,5 +149,5 @@ export function ProjectDialog({
         </div>
       </div>
     </div>
-  )
+  );
 }

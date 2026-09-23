@@ -1,25 +1,25 @@
-'use client'
+"use client";
 
-import { useRef, useState } from 'react'
-import { useActiveSection } from '@/hooks/use-active-section'
-import { MobileMenu, type NavItem } from './mobile-menu'
+import { useRef, useState } from "react";
+import { useActiveSection } from "@/hooks/use-active-section";
+import { MobileMenu, type NavItem } from "./mobile-menu";
 
 const NAV_ITEMS: readonly NavItem[] = [
-  { label: 'About', href: '#about', id: 'about' },
-  { label: 'Projects', href: '#projects', id: 'projects' },
-  { label: 'Skills', href: '#toolkit', id: 'toolkit' },
-  { label: 'Approach', href: '#approach', id: 'approach' },
-  { label: 'Journey', href: '#journey', id: 'journey' },
-  { label: 'Recognition', href: '#recognition', id: 'recognition' },
-  { label: 'Contact', href: '#contact', id: 'contact' },
-] as const
+  { label: "About", href: "#about", id: "about" },
+  { label: "Projects", href: "#projects", id: "projects" },
+  { label: "Skills", href: "#toolkit", id: "toolkit" },
+  { label: "Approach", href: "#approach", id: "approach" },
+  { label: "Journey", href: "#journey", id: "journey" },
+  { label: "Recognition", href: "#recognition", id: "recognition" },
+  { label: "Contact", href: "#contact", id: "contact" },
+] as const;
 
-const SECTION_IDS = NAV_ITEMS.map((item) => item.id)
+const SECTION_IDS = NAV_ITEMS.map((item) => item.id);
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const triggerRef = useRef<HTMLButtonElement>(null)
-  const activeSection = useActiveSection(SECTION_IDS)
+  const [isOpen, setIsOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const activeSection = useActiveSection(SECTION_IDS);
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-[var(--border,#ddd6e3)] bg-[var(--pearl,#f7f4fa)]/90 backdrop-blur-md">
@@ -29,7 +29,10 @@ export function Header() {
           href="#"
           className="flex items-center gap-2 font-mono text-base font-bold tracking-tight text-[var(--plum,#231d2b)] hover:opacity-80 transition-opacity"
         >
-          <span className="material-symbols-outlined text-[var(--green,#2fae63)]" aria-hidden>
+          <span
+            className="material-symbols-outlined text-[var(--green,#2fae63)]"
+            aria-hidden
+          >
             terminal
           </span>
           <span>DULAN.</span>
@@ -41,21 +44,21 @@ export function Header() {
           className="hidden md:flex md:items-center md:gap-1 lg:gap-2 font-mono text-xs tracking-wider uppercase"
         >
           {NAV_ITEMS.map((item) => {
-            const isActive = activeSection === item.id
+            const isActive = activeSection === item.id;
             return (
               <a
                 key={item.id}
                 href={item.href}
-                aria-current={isActive ? 'location' : undefined}
+                aria-current={isActive ? "location" : undefined}
                 className={`rounded px-3 py-1.5 transition-colors ${
                   isActive
-                    ? 'bg-[var(--soft-green,#e8f8ee)] text-[var(--green,#2fae63)] font-semibold'
-                    : 'text-[var(--muted-plum,#655d6f)] hover:bg-[var(--mist,#f0ebf4)] hover:text-[var(--plum,#231d2b)]'
+                    ? "bg-[var(--soft-green,#e8f8ee)] text-[var(--green,#2fae63)] font-semibold"
+                    : "text-[var(--muted-plum,#655d6f)] hover:bg-[var(--mist,#f0ebf4)] hover:text-[var(--plum,#231d2b)]"
                 }`}
               >
                 {item.label}
               </a>
-            )
+            );
           })}
         </nav>
 
@@ -94,11 +97,11 @@ export function Header() {
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            aria-label={isOpen ? 'Close navigation' : 'Open navigation'}
+            aria-label={isOpen ? "Close navigation" : "Open navigation"}
             className="flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border,#ddd6e3)] text-[var(--plum,#231d2b)] hover:bg-[var(--mist,#f0ebf4)] transition-colors"
           >
             <span className="material-symbols-outlined" aria-hidden>
-              {isOpen ? 'close' : 'menu'}
+              {isOpen ? "close" : "menu"}
             </span>
           </button>
         </div>
@@ -113,5 +116,5 @@ export function Header() {
         triggerRef={triggerRef}
       />
     </header>
-  )
+  );
 }
