@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --pearl: #f7f4fa;
+  --mist: #f0ebf4;
+  --white: #ffffff;
+  --plum: #231d2b;
+  --muted-plum: #655d6f;
+  --lavender-gray: #8b8295;
+  --border: #ddd6e3;
+  --green: #2fae63;
+  --green-hover: #258c50;
+  --soft-green: #e8f8ee;
+  --coral: #e85f8e;
+  --soft-coral: #fff0f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--pearl);
+  color: var(--plum);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading), sans-serif;
+}
+
+.skip-link {
+  position: fixed;
+  top: -4rem;
+  left: 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
