@@ -26,7 +26,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand / Logo */}
         <a
-          href="#"
+          href="#top"
           className="flex items-center gap-2 font-mono text-base font-bold tracking-tight text-[var(--plum,#231d2b)] hover:opacity-80 transition-opacity"
         >
           <span

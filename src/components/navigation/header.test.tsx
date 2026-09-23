@@ -37,7 +37,7 @@ describe("Header component", () => {
     render(<Header />);
     expect(screen.getByRole("link", { name: /dulan/i })).toHaveAttribute(
       "href",
-      "#",
+      "#top",
     );
     const resumeLinks = screen.getAllByRole("link", { name: /resume/i });
     expect(resumeLinks.length).toBeGreaterThanOrEqual(1);

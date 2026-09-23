@@ -49,7 +49,7 @@ export function MobileMenu({
     >
       <div className="flex items-center justify-between border-b border-[var(--border,#ddd6e3)] pb-4">
         <a
-          href="#"
+          href="#top"
           onClick={onClose}
           className="flex items-center gap-2 font-mono font-bold tracking-tight text-[var(--plum,#231d2b)] text-lg"
         >
