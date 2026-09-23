@@ -1,16 +1,16 @@
-import { About } from '@/components/about/about'
-import { BeyondCode } from '@/components/about/beyond-code'
-import { Approach } from '@/components/approach/approach'
-import { Contact } from '@/components/contact/contact'
-import { Footer } from '@/components/footer/footer'
-import { Hero } from '@/components/hero/hero'
-import { Journey } from '@/components/journey/journey'
-import { TechnologyMarquee } from '@/components/marquee/technology-marquee'
-import { Header } from '@/components/navigation/header'
-import { ProjectList } from '@/components/projects/project-list'
-import { Recognition } from '@/components/recognition/recognition'
-import { Reveal } from '@/components/reveal/reveal'
-import { Toolkit } from '@/components/toolkit/toolkit'
+import { About } from "@/components/about/about";
+import { BeyondCode } from "@/components/about/beyond-code";
+import { Approach } from "@/components/approach/approach";
+import { Contact } from "@/components/contact/contact";
+import { Footer } from "@/components/footer/footer";
+import { Hero } from "@/components/hero/hero";
+import { Journey } from "@/components/journey/journey";
+import { TechnologyMarquee } from "@/components/marquee/technology-marquee";
+import { Header } from "@/components/navigation/header";
+import { ProjectList } from "@/components/projects/project-list";
+import { Recognition } from "@/components/recognition/recognition";
+import { Reveal } from "@/components/reveal/reveal";
+import { Toolkit } from "@/components/toolkit/toolkit";
 
 export default function Page() {
   return (
@@ -66,5 +66,5 @@ export default function Page() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

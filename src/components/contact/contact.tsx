@@ -1,4 +1,4 @@
-import { socials } from '@/data/socials'
+import { socials } from "@/data/socials";
 
 export function Contact() {
   return (
@@ -16,8 +16,8 @@ export function Contact() {
             Let&apos;s connect and build something together.
           </h2>
           <p className="text-base sm:text-lg text-[var(--muted-plum,#655d6f)] leading-relaxed max-w-lg">
-            Whether you have an internship opportunity, an interesting project, or just want to
-            connect, I&apos;d love to hear from you.
+            Whether you have an internship opportunity, an interesting project,
+            or just want to connect, I&apos;d love to hear from you.
           </p>
 
           <a
@@ -45,8 +45,10 @@ export function Contact() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={
+                      item.href.startsWith("http") ? "noreferrer" : undefined
+                    }
                     className="mt-1 block font-mono text-sm sm:text-base font-medium text-[var(--plum,#231d2b)] hover:text-[var(--green,#2fae63)] transition-colors"
                   >
                     {item.value}
@@ -61,12 +63,15 @@ export function Contact() {
               {item.href && (
                 <a
                   href={item.href}
-                  target={item.href.startsWith('http') ? '_blank' : undefined}
-                  rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                   aria-label={`Open ${item.label}`}
                   className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border,#ddd6e3)] text-[var(--plum,#231d2b)] hover:border-[var(--green,#2fae63)] hover:text-[var(--green,#2fae63)] transition-colors"
                 >
-                  <span className="material-symbols-outlined text-sm" aria-hidden>
+                  <span
+                    className="material-symbols-outlined text-sm"
+                    aria-hidden
+                  >
                     open_in_new
                   </span>
                 </a>
@@ -76,5 +81,5 @@ export function Contact() {
         </div>
       </div>
     </div>
-  )
+  );
 }

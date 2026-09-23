@@ -1,4 +1,4 @@
-import { skillGroups } from '@/data/skills'
+import { skillGroups } from "@/data/skills";
 
 export function Toolkit() {
   return (
@@ -41,5 +41,5 @@ export function Toolkit() {
         ))}
       </div>
     </div>
-  )
+  );
 }

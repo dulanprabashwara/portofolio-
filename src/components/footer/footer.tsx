@@ -7,7 +7,10 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col sm:flex-row items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
         {/* Brand */}
         <div className="flex items-center gap-2 font-mono text-sm font-bold tracking-tight text-[var(--plum,#231d2b)]">
-          <span className="material-symbols-outlined text-[var(--green,#2fae63)]" aria-hidden>
+          <span
+            className="material-symbols-outlined text-[var(--green,#2fae63)]"
+            aria-hidden
+          >
             terminal
           </span>
           <span>DULAN.</span>
@@ -33,5 +36,5 @@ export function Footer() {
         </a>
       </div>
     </footer>
-  )
+  );
 }

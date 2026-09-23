@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { useRef } from 'react'
-import { useModalBehavior } from '@/hooks/use-modal-behavior'
-import type { Achievement } from '@/types/content'
+import Image from "next/image";
+import { useRef } from "react";
+import { useModalBehavior } from "@/hooks/use-modal-behavior";
+import type { Achievement } from "@/types/content";
 
 type ImageLightboxProps = {
-  achievement: Achievement | null
-  open: boolean
-  onClose: () => void
-  triggerRef?: React.RefObject<HTMLElement | null>
-}
+  achievement: Achievement | null;
+  open: boolean;
+  onClose: () => void;
+  triggerRef?: React.RefObject<HTMLElement | null>;
+};
 
 export function ImageLightbox({
   achievement,
@@ -18,16 +18,16 @@ export function ImageLightbox({
   onClose,
   triggerRef,
 }: ImageLightboxProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useModalBehavior({
     open,
     onClose,
     containerRef,
     triggerRef,
-  })
+  });
 
-  if (!open || !achievement || !achievement.image) return null
+  if (!open || !achievement || !achievement.image) return null;
 
   return (
     <div
@@ -37,7 +37,7 @@ export function ImageLightbox({
       aria-label={achievement.event}
       className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--plum,#231d2b)]/80 backdrop-blur-md p-4 sm:p-6"
       onClick={(e) => {
-        if (e.target === e.currentTarget) onClose()
+        if (e.target === e.currentTarget) onClose();
       }}
     >
       <div
@@ -87,5 +87,5 @@ export function ImageLightbox({
         </div>
       </div>
     </div>
-  )
+  );
 }

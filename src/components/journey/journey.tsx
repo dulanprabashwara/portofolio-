@@ -1,4 +1,4 @@
-import { journey } from '@/data/journey'
+import { journey } from "@/data/journey";
 
 export function Journey() {
   return (
@@ -20,7 +20,7 @@ export function Journey() {
       <div className="max-w-3xl">
         <ol className="relative border-l border-[var(--border,#ddd6e3)] ml-3 sm:ml-4 space-y-10 sm:space-y-12">
           {journey.map((entry, index) => {
-            const isCurrent = index === journey.length - 1
+            const isCurrent = index === journey.length - 1;
 
             return (
               <li key={entry.institution} className="relative pl-8 sm:pl-10">
@@ -28,8 +28,8 @@ export function Journey() {
                 <div
                   className={`absolute -left-[9px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border-2 bg-white transition-colors ${
                     isCurrent
-                      ? 'border-[var(--green,#2fae63)] shadow-xs'
-                      : 'border-[var(--lavender-gray,#8b8295)]'
+                      ? "border-[var(--green,#2fae63)] shadow-xs"
+                      : "border-[var(--lavender-gray,#8b8295)]"
                   }`}
                   aria-hidden="true"
                 >
@@ -42,8 +42,8 @@ export function Journey() {
                 <div
                   className={`rounded-xl border p-5 sm:p-6 transition-all ${
                     isCurrent
-                      ? 'border-[var(--green,#2fae63)]/40 bg-white shadow-xs'
-                      : 'border-[var(--border,#ddd6e3)] bg-white/70'
+                      ? "border-[var(--green,#2fae63)]/40 bg-white shadow-xs"
+                      : "border-[var(--border,#ddd6e3)] bg-white/70"
                   }`}
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
@@ -64,10 +64,10 @@ export function Journey() {
                   )}
                 </div>
               </li>
-            )
+            );
           })}
         </ol>
       </div>
     </div>
-  )
+  );
 }

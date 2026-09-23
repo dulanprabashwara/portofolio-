@@ -1,29 +1,29 @@
 const PRINCIPLES = [
   {
-    number: '01',
-    title: 'Understand the system',
+    number: "01",
+    title: "Understand the system",
     description:
-      'Think about the users, requirements, data and architecture before implementation.',
+      "Think about the users, requirements, data and architecture before implementation.",
   },
   {
-    number: '02',
-    title: 'Build end-to-end',
+    number: "02",
+    title: "Build end-to-end",
     description:
-      'Work across frontend, backend, databases and APIs to create complete solutions.',
+      "Work across frontend, backend, databases and APIs to create complete solutions.",
   },
   {
-    number: '03',
-    title: 'Make it reliable',
+    number: "03",
+    title: "Make it reliable",
     description:
-      'Pay attention to authentication, persistence, error handling and system behavior.',
+      "Pay attention to authentication, persistence, error handling and system behavior.",
   },
   {
-    number: '04',
-    title: 'Keep improving',
+    number: "04",
+    title: "Keep improving",
     description:
-      'Debug, test, iterate and refine rather than stopping when something simply works.',
+      "Debug, test, iterate and refine rather than stopping when something simply works.",
   },
-] as const
+] as const;
 
 export function Approach() {
   return (
@@ -61,5 +61,5 @@ export function Approach() {
         ))}
       </div>
     </div>
-  )
+  );
 }
