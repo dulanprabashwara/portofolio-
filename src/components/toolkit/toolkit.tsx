@@ -12,31 +12,31 @@ export function Toolkit() {
           id="toolkit-title"
           className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--plum,#231d2b)]"
         >
-          Technologies, tools, and technical practices.
+          Tools I use to turn ideas into systems.
         </h2>
       </div>
 
-      {/* Grid of Skill Categories */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {/* Grid of 4 Skill Categories */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         {skillGroups.map((group) => (
           <div
             key={group.title}
-            className="flex flex-col rounded-xl border border-[var(--border,#ddd6e3)] bg-white p-6 shadow-xs"
+            className="flex flex-col rounded-xl border border-[var(--border,#ddd6e3)] bg-white p-6 sm:p-7 shadow-xs"
           >
             <h3 className="font-mono text-xs uppercase tracking-wider font-semibold text-[var(--lavender-gray,#8b8295)] border-b border-[var(--border,#ddd6e3)] pb-3">
               {group.title}
             </h3>
 
-            <div className="flex flex-wrap gap-2 pt-4">
+            <ul className="mt-4 space-y-2.5">
               {group.items.map((item) => (
-                <span
+                <li
                   key={item}
-                  className="rounded-md border border-[var(--border,#ddd6e3)] bg-[var(--pearl,#f7f4fa)] px-3 py-1.5 font-mono text-xs text-[var(--plum,#231d2b)]"
+                  className="text-sm font-medium text-[var(--plum,#231d2b)]"
                 >
                   {item}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))}
       </div>

@@ -12,8 +12,8 @@ export function BeyondCode() {
           id="beyond-code-title"
           className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[var(--plum,#231d2b)] leading-snug"
         >
-          Curious about where software, intelligent systems and physical
-          computing intersect.
+          &ldquo;Curious about where software, intelligent systems and physical
+          computing intersect.&rdquo;
         </h2>
 
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">

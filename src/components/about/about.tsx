@@ -21,7 +21,7 @@ export function About() {
             id="about-title"
             className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--plum,#231d2b)]"
           >
-            Engineering software beyond the interface.
+            A little more than the resume.
           </h2>
         </div>
 
@@ -59,7 +59,7 @@ export function About() {
                   Academic Standing
                 </dt>
                 <dd className="mt-1 font-mono text-base font-semibold text-[var(--green,#2fae63)]">
-                  CGPA 3.70 / 4.00
+                  CGPA: 3.70 / 4.00
                 </dd>
               </div>
 

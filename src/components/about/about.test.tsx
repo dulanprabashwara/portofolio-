@@ -9,7 +9,14 @@ describe("About component", () => {
       screen.getByText("BSc. in Information Technology (Hons)"),
     ).toBeInTheDocument();
     expect(screen.getByText("Apr 2024 — Present")).toBeInTheDocument();
-    expect(screen.getByText("CGPA 3.70 / 4.00")).toBeInTheDocument();
+    expect(screen.getByText("CGPA: 3.70 / 4.00")).toBeInTheDocument();
+    expect(screen.queryByText(/3\.65/)).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: /A little more than the resume\./i,
+      }),
+    ).toBeInTheDocument();
     expect(screen.getAllByRole("listitem")).toHaveLength(7);
   });
 });

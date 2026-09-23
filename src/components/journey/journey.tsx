@@ -6,13 +6,13 @@ export function Journey() {
       {/* Section Header */}
       <div className="mb-12 sm:mb-16">
         <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--muted-plum,#655d6f)]">
-          05 / JOURNEY
+          05 / EDUCATION
         </p>
         <h2
           id="journey-title"
           className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--plum,#231d2b)]"
         >
-          Academic Journey
+          Still learning. Always building.
         </h2>
       </div>
 

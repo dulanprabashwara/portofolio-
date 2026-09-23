@@ -37,7 +37,7 @@ export function Approach() {
           id="approach-title"
           className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--plum,#231d2b)]"
         >
-          Engineering Principles
+          How I think about building.
         </h2>
       </div>
 
@@ -48,7 +48,7 @@ export function Approach() {
             key={principle.number}
             className="flex flex-col rounded-xl border border-[var(--border,#ddd6e3)] bg-white p-6 sm:p-8 shadow-xs"
           >
-            <span className="font-mono text-xs font-bold text-[var(--green,#2fae63)] mb-4">
+            <span className="font-mono text-xs font-bold text-[var(--coral,#e85f8e)] mb-4">
               {principle.number}
             </span>
             <h3 className="text-xl font-bold tracking-tight text-[var(--plum,#231d2b)]">

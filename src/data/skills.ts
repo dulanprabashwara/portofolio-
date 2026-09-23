@@ -2,26 +2,26 @@ import type { SkillGroup } from "@/types/content";
 
 export const skillGroups: readonly SkillGroup[] = [
   {
-    title: "Languages",
+    title: "LANGUAGES",
     items: ["JavaScript", "TypeScript", "Python", "Java", "C", "HTML", "CSS"],
   },
   {
-    title: "Frontend",
+    title: "FRONTEND",
     items: ["React.js", "Next.js", "Tailwind CSS", "UI/UX"],
   },
   {
-    title: "Backend & Real-time",
+    title: "BACKEND & REAL-TIME",
     items: [
       "Node.js",
       "Express.js",
       "Spring Boot",
       "REST APIs",
       "Socket.IO",
-      "WebSocket/STOMP",
+      "WebSocket / STOMP",
     ],
   },
   {
-    title: "Data & Infrastructure",
+    title: "DATA & INFRASTRUCTURE",
     items: [
       "PostgreSQL",
       "Firebase Firestore",
@@ -36,15 +36,6 @@ export const skillGroups: readonly SkillGroup[] = [
       "Jenkins",
       "Heroku",
       "Google Cloud Run",
-    ],
-  },
-  {
-    title: "Practices",
-    items: [
-      "Agile Development",
-      "Software Architecture",
-      "Debugging",
-      "REST API Design",
     ],
   },
 ] as const;

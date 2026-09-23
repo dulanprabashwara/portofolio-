@@ -6,6 +6,12 @@ describe("Approach component", () => {
   it("asserts all four headings and exact descriptions in order", () => {
     render(<Approach />);
     expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: /How I think about building\./i,
+      }),
+    ).toBeInTheDocument();
+    expect(
       screen.getAllByRole("heading", { level: 3 }).map((h) => h.textContent),
     ).toEqual([
       "Understand the system",

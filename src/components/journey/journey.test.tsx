@@ -19,7 +19,7 @@ describe("Journey component", () => {
       screen.getAllByText("BSc. in Information Technology (Hons)"),
     ).toHaveLength(1);
     expect(
-      screen.queryByText(/CGPA|Apr 2024|Secondary Education/i),
+      screen.queryByText(/CGPA|Apr 2024|Secondary Education|CHAMPIONS|RUNNERS-UP/i),
     ).not.toBeInTheDocument();
   });
 });

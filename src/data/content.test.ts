@@ -52,11 +52,10 @@ describe("factual content invariants", () => {
 
   it("has valid skill groups and social links", () => {
     expect(skillGroups.map(({ title }) => title)).toEqual([
-      "Languages",
-      "Frontend",
-      "Backend & Real-time",
-      "Data & Infrastructure",
-      "Practices",
+      "LANGUAGES",
+      "FRONTEND",
+      "BACKEND & REAL-TIME",
+      "DATA & INFRASTRUCTURE",
     ]);
     expect(socials.map(({ label }) => label)).toEqual([
       "Email",
@@ -64,5 +63,37 @@ describe("factual content invariants", () => {
       "GitHub",
       "Location",
     ]);
+  });
+
+  it("verifies Pacman Live hardware details and invariants", () => {
+    const pacman = projects.find((p) => p.slug === "pacman-live")!;
+    expect(pacman.title).toBe("Pacman Live");
+    expect(pacman.type).toBe("Interactive Embedded LED Matrix Game");
+    expect(pacman.overview).toBe(
+      "Physical Pac-Man-inspired interactive embedded game combining microcontrollers, LED displays, wireless communication and physical actuators.",
+    );
+    expect(pacman.stack).toEqual([
+      "Arduino Nano",
+      "ESP32",
+      "ESP-NOW",
+      "Serial communication",
+      "16x16 LED Matrix",
+      "WS2812B",
+      "Servo",
+      "A4988",
+    ]);
+    expect(pacman.features).toEqual([
+      "Multi-level game logic",
+      "Physical maze interaction",
+      "Wireless communication",
+      "Serial communication",
+      "Life indicators",
+      "Servo control",
+      "Buzzer feedback",
+      "Stepper motor control",
+      "Vibration feedback",
+    ]);
+    expect(pacman.liveUrl).toBeNull();
+    expect(pacman.repositoryUrl).toBeNull();
   });
 });
