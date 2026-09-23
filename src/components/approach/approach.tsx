@@ -27,7 +27,7 @@ const PRINCIPLES = [
 
 export function Approach() {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 border-b border-[var(--border,#ddd6e3)]">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 border-b border-[var(--border,#ddd6e3)]">
       {/* Section Header */}
       <div className="mb-12 sm:mb-16">
         <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--muted-plum,#655d6f)]">
@@ -42,13 +42,13 @@ export function Approach() {
       </div>
 
       {/* Grid of 4 principles */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         {PRINCIPLES.map((principle) => (
           <div
             key={principle.number}
-            className="flex flex-col rounded-xl border border-[var(--border,#ddd6e3)] bg-white p-6 sm:p-8 shadow-xs"
+            className="flex flex-col rounded-xl border border-[var(--border,#ddd6e3)] bg-white p-6 sm:p-8 shadow-xs hover:border-[var(--green,#2fae63)]/40 hover:-translate-y-0.5 transition-all"
           >
-            <span className="font-mono text-xs font-bold text-[var(--coral,#e85f8e)] mb-4">
+            <span className="font-mono text-3xl sm:text-4xl font-extrabold text-[var(--coral,#e85f8e)] mb-4">
               {principle.number}
             </span>
             <h3 className="text-xl font-bold tracking-tight text-[var(--plum,#231d2b)]">

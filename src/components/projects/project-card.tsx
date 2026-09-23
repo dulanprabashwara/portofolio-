@@ -15,11 +15,17 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
   const isReversed = index % 2 === 1;
 
   return (
-    <article className="group rounded-2xl border border-[var(--border,#ddd6e3)] bg-white p-6 sm:p-8 lg:p-10 shadow-xs transition-shadow hover:shadow-md">
+    <article
+      className={`group rounded-2xl border ${
+        project.slug === "ceylon-news"
+          ? "border-[var(--coral,#e85f8e)]/35 ring-1 ring-[var(--coral,#e85f8e)]/15"
+          : "border-[var(--border,#ddd6e3)]"
+      } bg-white p-6 sm:p-8 lg:p-10 shadow-xs transition-all duration-300 hover:shadow-md`}
+    >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        {/* Visual / Media Trigger */}
+        {/* Visual / Media Trigger ~7 cols */}
         <div
-          className={`lg:col-span-6 ${
+          className={`lg:col-span-7 ${
             isReversed ? "lg:order-2" : "lg:order-1"
           } overflow-hidden rounded-xl`}
         >
@@ -27,7 +33,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
             type="button"
             onClick={(e) => onOpen(project, e.currentTarget)}
             aria-label={`Open ${project.title} case study`}
-            className="w-full text-left transition-transform duration-300 hover:scale-[1.01] focus-visible:outline-2 focus-visible:outline-[var(--green,#2fae63)] rounded-xl"
+            className="w-full text-left transition-transform duration-300 hover:scale-[1.015] focus-visible:outline-2 focus-visible:outline-[var(--green,#2fae63)] rounded-xl"
           >
             {project.image ? (
               <div className="relative aspect-16/10 w-full overflow-hidden rounded-xl border border-[var(--border,#ddd6e3)]">
@@ -36,7 +42,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
                   alt={project.imageAlt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
                 />
               </div>
             ) : (
@@ -45,20 +51,25 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
           </button>
         </div>
 
-        {/* Details Column */}
+        {/* Details Column ~5 cols */}
         <div
-          className={`lg:col-span-6 ${
+          className={`lg:col-span-5 ${
             isReversed ? "lg:order-1" : "lg:order-2"
           } flex flex-col items-start gap-4 sm:gap-5`}
         >
           {/* Eyebrow */}
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-sm font-bold text-[var(--green,#2fae63)]">
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="font-mono text-sm font-bold text-[var(--coral,#e85f8e)]">
               {project.number}
             </span>
             <span className="font-mono text-xs uppercase tracking-wider text-[var(--lavender-gray,#8b8295)]">
               {project.type}
             </span>
+            {project.slug === "ceylon-news" && (
+              <span className="rounded-full bg-[var(--soft-coral,#fff0f4)] px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider font-semibold text-[var(--coral,#e85f8e)] border border-[var(--coral,#e85f8e)]/25">
+                Flagship
+              </span>
+            )}
           </div>
 
           {/* Title Trigger */}
@@ -68,7 +79,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
             aria-label={`Open ${project.title} case study`}
             className="text-left group-hover:text-[var(--green,#2fae63)] transition-colors focus-visible:outline-2 focus-visible:outline-[var(--green,#2fae63)] rounded"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--plum,#231d2b)]">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[var(--plum,#231d2b)]">
               {project.title}
             </h3>
           </button>
@@ -101,7 +112,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
               type="button"
               onClick={(e) => onOpen(project, e.currentTarget)}
               aria-label={`Open ${project.title} case study`}
-              className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider font-semibold text-[var(--green,#2fae63)] hover:text-[var(--green-hover,#258c50)] transition-colors min-h-[44px] py-2"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--green,#2fae63)] hover:bg-[var(--green-hover,#258c50)] text-white px-5 py-2.5 font-mono text-xs uppercase tracking-wider font-semibold shadow-xs hover:-translate-y-0.5 transition-all min-h-[44px]"
             >
               <span>Case Study</span>
               <span className="material-symbols-outlined text-base" aria-hidden>

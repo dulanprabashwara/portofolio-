@@ -2,7 +2,7 @@ export function BeyondCode() {
   const tags = ["WEB SYSTEMS", "AI", "EMBEDDED"] as const;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 border-b border-[var(--border,#ddd6e3)]">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 border-b border-[var(--border,#ddd6e3)]">
       <div className="flex flex-col items-center text-center max-w-3xl mx-auto gap-6">
         <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--muted-plum,#655d6f)]">
           INTERSECTION &amp; PHILOSOPHY

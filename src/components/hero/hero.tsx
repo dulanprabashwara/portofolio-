@@ -25,7 +25,7 @@ export function Hero() {
     <div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32"
+      className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left column: Hero narrative & CTAs */}
@@ -51,10 +51,13 @@ export function Hero() {
           {/* Heading */}
           <h1
             id="hero-title"
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--plum,#231d2b)] leading-[1.08]"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-[var(--plum,#231d2b)] leading-[1.04]"
           >
-            Dulan Prabashwara
-            <span className="text-[var(--green,#2fae63)]">.</span>
+            <span className="block">Dulan</span>{" "}
+            <span className="block">
+              Prabashwara
+              <span className="text-[var(--green,#2fae63)]">.</span>
+            </span>
           </h1>
 
           {/* Supporting Copy */}
@@ -68,11 +71,11 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--green,#2fae63)] px-6 py-3 font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold text-white shadow-sm hover:bg-[var(--green-hover,#258c50)] transition-all hover:translate-y-[-1px]"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--green,#2fae63)] px-6 py-3.5 font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold text-white shadow-sm hover:bg-[var(--green-hover,#258c50)] hover:-translate-y-0.5 transition-all"
             >
               <span>Explore my work</span>
               <span className="material-symbols-outlined text-base" aria-hidden>
-                arrow_downward
+                arrow_forward
               </span>
             </a>
 
@@ -80,7 +83,7 @@ export function Hero() {
               href="/dulan-prabashwara-resume.pdf"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-[var(--border,#ddd6e3)] bg-white px-6 py-3 font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold text-[var(--plum,#231d2b)] shadow-xs hover:border-[var(--green,#2fae63)] hover:text-[var(--green,#2fae63)] transition-all hover:translate-y-[-1px]"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-[var(--border,#ddd6e3)] bg-white px-6 py-3.5 font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold text-[var(--plum,#231d2b)] shadow-xs hover:border-[var(--green,#2fae63)] hover:text-[var(--green,#2fae63)] hover:-translate-y-0.5 transition-all"
             >
               <span>View résumé</span>
               <span className="material-symbols-outlined text-base" aria-hidden>
@@ -93,14 +96,24 @@ export function Hero() {
         {/* Right column: Circular Portrait slot */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end">
           <div
-            className="portrait-motion transition-transform duration-200 ease-out"
+            className="portrait-motion relative transition-transform duration-200 ease-out"
             style={{
               transform: shouldReduceMotion
                 ? "none"
                 : `translate3d(${offset.x}px, ${offset.y}px, 0)`,
             }}
           >
-            <NeutralMedia label="Portrait not supplied" aspect="circle" />
+            <div className="relative p-2 sm:p-2.5 rounded-full border-2 border-[var(--border,#ddd6e3)] bg-white/80 shadow-md">
+              <NeutralMedia label="Dulan Prabashwara" aspect="circle" />
+
+              {/* Overlapping annotation pill */}
+              <div className="absolute bottom-2 right-2 inline-flex items-center gap-2 rounded-full border border-[var(--border,#ddd6e3)] bg-white px-3.5 py-1.5 shadow-sm">
+                <span className="h-2 w-2 rounded-full bg-[var(--green,#2fae63)]" />
+                <span className="font-mono text-xs font-semibold text-[var(--plum,#231d2b)]">
+                  Available
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

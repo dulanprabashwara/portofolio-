@@ -17,48 +17,48 @@ export default function Page() {
     <div id="top" className="min-h-screen bg-[var(--pearl,#f7f4fa)]">
       <Header />
       <main id="main-content">
-        <section id="hero" aria-labelledby="hero-title">
+        <section id="hero" aria-labelledby="hero-title" className="bg-[var(--pearl,#f7f4fa)]">
           <Hero />
         </section>
-        <section id="technology" aria-label="Technology overview">
+        <section id="technology" aria-label="Technology overview" className="bg-white/60">
           <TechnologyMarquee />
         </section>
-        <section id="about" aria-labelledby="about-title">
+        <section id="about" aria-labelledby="about-title" className="bg-white">
           <Reveal>
             <About />
           </Reveal>
         </section>
-        <section id="projects" aria-labelledby="projects-title">
+        <section id="projects" aria-labelledby="projects-title" className="bg-[var(--pearl,#f7f4fa)]">
           <Reveal>
             <ProjectList />
           </Reveal>
         </section>
-        <section id="toolkit" aria-labelledby="toolkit-title">
+        <section id="toolkit" aria-labelledby="toolkit-title" className="bg-white">
           <Reveal>
             <Toolkit />
           </Reveal>
         </section>
-        <section id="approach" aria-labelledby="approach-title">
+        <section id="approach" aria-labelledby="approach-title" className="bg-[var(--mist,#f0ebf4)]/35">
           <Reveal>
             <Approach />
           </Reveal>
         </section>
-        <section id="journey" aria-labelledby="journey-title">
+        <section id="journey" aria-labelledby="journey-title" className="bg-white">
           <Reveal>
             <Journey />
           </Reveal>
         </section>
-        <section id="recognition" aria-labelledby="recognition-title">
+        <section id="recognition" aria-labelledby="recognition-title" className="bg-[var(--pearl,#f7f4fa)]">
           <Reveal>
             <Recognition />
           </Reveal>
         </section>
-        <section id="beyond-code" aria-labelledby="beyond-code-title">
+        <section id="beyond-code" aria-labelledby="beyond-code-title" className="bg-[var(--mist,#f0ebf4)]/30">
           <Reveal>
             <BeyondCode />
           </Reveal>
         </section>
-        <section id="contact" aria-labelledby="contact-title">
+        <section id="contact" aria-labelledby="contact-title" className="bg-white">
           <Reveal>
             <Contact />
           </Reveal>

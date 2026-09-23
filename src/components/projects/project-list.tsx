@@ -24,7 +24,7 @@ export function ProjectList() {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 border-b border-[var(--border,#ddd6e3)]">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 border-b border-[var(--border,#ddd6e3)]">
       {/* Section Header */}
       <div className="mb-12 sm:mb-16">
         <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--muted-plum,#655d6f)]">
@@ -34,12 +34,12 @@ export function ProjectList() {
           id="projects-title"
           className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--plum,#231d2b)]"
         >
-          Crafted with intent and technical rigor.
+          Things I&apos;ve designed, engineered &amp; shipped.
         </h2>
       </div>
 
       {/* Projects List */}
-      <div className="flex flex-col gap-10 sm:gap-14">
+      <div className="flex flex-col gap-8 sm:gap-12 lg:gap-14">
         {projects.map((project, index) => (
           <ProjectCard
             key={project.slug}

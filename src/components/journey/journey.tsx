@@ -2,7 +2,7 @@ import { journey } from "@/data/journey";
 
 export function Journey() {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 border-b border-[var(--border,#ddd6e3)]">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 border-b border-[var(--border,#ddd6e3)]">
       {/* Section Header */}
       <div className="mb-12 sm:mb-16">
         <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--muted-plum,#655d6f)]">
@@ -17,16 +17,19 @@ export function Journey() {
       </div>
 
       {/* Vertical Timeline */}
-      <div className="max-w-3xl">
-        <ol className="relative border-l border-[var(--border,#ddd6e3)] ml-3 sm:ml-4 space-y-10 sm:space-y-12">
+      <div className="max-w-2xl">
+        <ol className="relative border-l-2 border-[var(--border,#ddd6e3)] ml-3 sm:ml-4">
           {journey.map((entry, index) => {
             const isCurrent = index === journey.length - 1;
 
             return (
-              <li key={entry.institution} className="relative pl-8 sm:pl-10">
+              <li
+                key={entry.institution}
+                className="relative pl-8 sm:pl-10 pb-10 last:pb-0"
+              >
                 {/* Timeline Node Indicator */}
                 <div
-                  className={`absolute -left-[9px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full border-2 bg-white transition-colors ${
+                  className={`absolute -left-[9px] top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 bg-white transition-colors ${
                     isCurrent
                       ? "border-[var(--green,#2fae63)] shadow-xs"
                       : "border-[var(--lavender-gray,#8b8295)]"
@@ -38,16 +41,16 @@ export function Journey() {
                   )}
                 </div>
 
-                {/* Entry Content Card */}
-                <div
-                  className={`rounded-xl border p-5 sm:p-6 transition-all ${
-                    isCurrent
-                      ? "border-[var(--green,#2fae63)]/40 bg-white shadow-xs"
-                      : "border-[var(--border,#ddd6e3)] bg-white/70"
-                  }`}
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <h3 className="text-lg sm:text-xl font-bold tracking-tight text-[var(--plum,#231d2b)]">
+                {/* Typography content instead of bulky card */}
+                <div className="flex flex-col">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3
+                      className={`text-lg sm:text-xl font-bold tracking-tight ${
+                        isCurrent
+                          ? "text-[var(--plum,#231d2b)]"
+                          : "text-[var(--muted-plum,#655d6f)]"
+                      }`}
+                    >
                       {entry.institution}
                     </h3>
                     {isCurrent && (
@@ -58,7 +61,7 @@ export function Journey() {
                   </div>
 
                   {entry.detail && (
-                    <p className="mt-2 font-mono text-sm text-[var(--muted-plum,#655d6f)]">
+                    <p className="mt-1 font-mono text-sm text-[var(--green,#2fae63)] font-medium">
                       {entry.detail}
                     </p>
                   )}

@@ -16,7 +16,9 @@ describe("BeyondCode component", () => {
     expect(screen.getByText("EMBEDDED")).toBeInTheDocument();
 
     expect(
-      screen.queryByText(/mentorship|community involvement|technical reading|open-source contributions/i),
+      screen.queryByText(
+        /mentorship|community involvement|technical reading|open-source contributions/i,
+      ),
     ).not.toBeInTheDocument();
   });
 });

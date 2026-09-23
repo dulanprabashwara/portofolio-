@@ -2,7 +2,7 @@ import { skillGroups } from "@/data/skills";
 
 export function Toolkit() {
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 border-b border-[var(--border,#ddd6e3)]">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 border-b border-[var(--border,#ddd6e3)]">
       {/* Section Header */}
       <div className="mb-12 sm:mb-16">
         <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--muted-plum,#655d6f)]">
@@ -21,7 +21,7 @@ export function Toolkit() {
         {skillGroups.map((group) => (
           <div
             key={group.title}
-            className="flex flex-col rounded-xl border border-[var(--border,#ddd6e3)] bg-white p-6 sm:p-7 shadow-xs"
+            className="flex flex-col rounded-xl border border-[var(--border,#ddd6e3)] bg-white p-6 sm:p-7 shadow-xs hover:border-[var(--green,#2fae63)]/40 hover:-translate-y-0.5 transition-all"
           >
             <h3 className="font-mono text-xs uppercase tracking-wider font-semibold text-[var(--lavender-gray,#8b8295)] border-b border-[var(--border,#ddd6e3)] pb-3">
               {group.title}
