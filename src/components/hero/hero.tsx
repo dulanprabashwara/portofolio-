@@ -177,7 +177,7 @@ export function Hero() {
               />
 
               {/* Circular Frame Container */}
-              <div className="relative aspect-square w-full h-full rounded-full border-2 border-[var(--border)] dark:border-white/15 bg-black shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.7)] overflow-hidden group">
+              <div className="relative aspect-square w-full h-full rounded-full border-2 border-[var(--border)] dark:border-white/15 bg-white dark:bg-black shadow-xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.7)] overflow-hidden group">
                 {/* Subtle radial overhead spotlight inside circle */}
                 <div
                   className="pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 w-64 h-48 rounded-full bg-[radial-gradient(circle,rgba(47,174,99,0.16)_0%,transparent_70%)] z-10"
@@ -187,7 +187,7 @@ export function Hero() {
                 {/* Subject Image: Centered on person & laptop, desk seamlessly fills bottom curve with zero gap */}
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
-                    src="/images/dulan-hero.jpg"
+                    src="/images/dulan-hero.png"
                     alt="Dulan Prabashwara working on a laptop at a desk"
                     width={1024}
                     height={1024}

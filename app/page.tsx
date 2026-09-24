@@ -21,7 +21,7 @@ export default function Page() {
     >
       <CursorGlow />
       <Header />
-      <main id="main-content">
+      <main id="main-content" className="pt-16">
         <section
           id="hero"
           aria-labelledby="hero-title"

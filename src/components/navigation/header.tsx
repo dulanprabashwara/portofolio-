@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { MobileMenu, type NavItem } from "./mobile-menu";
 import { LampToggle } from "@/components/ui/lamphome";
@@ -19,11 +19,28 @@ const SECTION_IDS = NAV_ITEMS.map((item) => item.id);
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const activeSection = useActiveSection(SECTION_IDS);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 15);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-[var(--border)] dark:border-white/[0.08] bg-[var(--pearl)]/85 dark:bg-[#0A0A0A]/75 backdrop-blur-xl shadow-xs dark:shadow-[0_4px_30px_rgba(0,0,0,0.5)] transition-colors">
+    <header
+      className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 ${
+        isScrolled
+          ? "border-b border-black/[0.08] dark:border-white/[0.12] bg-white/70 dark:bg-[#0A0A0A]/70 backdrop-blur-xl shadow-xs dark:shadow-[0_8px_32px_rgba(0,0,0,0.6)]"
+          : "border-b border-transparent bg-white/40 dark:bg-[#0A0A0A]/40 backdrop-blur-md"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 relative">
         {/* Brand / Logo */}
         <a
@@ -118,6 +135,14 @@ export function Header() {
           <LampToggle />
         </div>
       </div>
+
+      {/* Subtle specular glass highlight line along the bottom border when scrolled */}
+      <div
+        className={`pointer-events-none absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--green,#2fae63)]/25 dark:via-[var(--green,#2fae63)]/40 to-transparent transition-opacity duration-300 ${
+          isScrolled ? "opacity-100" : "opacity-0"
+        }`}
+        aria-hidden="true"
+      />
 
       {/* Mobile Drawer */}
       <MobileMenu
