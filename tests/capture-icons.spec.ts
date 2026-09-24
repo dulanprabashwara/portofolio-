@@ -25,4 +25,10 @@ test("capture sections with icons", async ({ page }) => {
   await projects.scrollIntoViewIfNeeded();
   await page.waitForTimeout(500);
   await page.screenshot({ path: `${ARTIFACT_DIR}/projects-section-icons.png` });
+
+  // Capture EasyBlogger project card specifically
+  const easyBloggerCard = page.locator("article").filter({ hasText: "EasyBlogger" });
+  await easyBloggerCard.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(500);
+  await page.screenshot({ path: `${ARTIFACT_DIR}/easyblogger-card.png` });
 });

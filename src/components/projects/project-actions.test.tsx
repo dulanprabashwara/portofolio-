@@ -13,7 +13,7 @@ describe("ProjectActions component", () => {
   });
 
   it("renders disabled visual placeholders for software projects with null URLs", () => {
-    render(<ProjectActions project={projects[0]} />);
+    render(<ProjectActions project={projects[1]} />);
     expect(
       screen.queryByRole("link", { name: /live site|repository/i }),
     ).not.toBeInTheDocument();
@@ -25,6 +25,20 @@ describe("ProjectActions component", () => {
       .closest("span[aria-disabled='true']");
     expect(livePlaceholder).toBeInTheDocument();
     expect(repoPlaceholder).toBeInTheDocument();
+  });
+
+  it("renders active live site and repository links for EasyBlogger", () => {
+    render(<ProjectActions project={projects[0]} />);
+    const liveLink = screen.getByRole("link", { name: /live site/i });
+    const repoLink = screen.getByRole("link", { name: /repository/i });
+    expect(liveLink).toHaveAttribute(
+      "href",
+      "https://easyblogger-7835cbde30d8.herokuapp.com/",
+    );
+    expect(repoLink).toHaveAttribute(
+      "href",
+      "https://github.com/dulanprabashwara/EasyBlogger-frontend",
+    );
   });
 
   it.each([null, "", "   "])(

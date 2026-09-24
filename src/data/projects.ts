@@ -24,10 +24,10 @@ export const projects: readonly Project[] = [
       "Socket.IO/REST messaging with delivery, presence, and persistent storage",
       "Stripe payments, webhooks, premium roles, and separate Heroku services",
     ],
-    image: null,
+    image: "/images/projects/easyblogger.png",
     imageAlt: "EasyBlogger project preview",
-    liveUrl: null,
-    repositoryUrl: null,
+    liveUrl: "https://easyblogger-7835cbde30d8.herokuapp.com/",
+    repositoryUrl: "https://github.com/dulanprabashwara/EasyBlogger-frontend",
   },
   {
     number: "02",

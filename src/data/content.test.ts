@@ -6,7 +6,7 @@ import { skillGroups } from "./skills";
 import { socials } from "./socials";
 
 describe("factual content invariants", () => {
-  it("keeps six projects ordered and unknown links null", () => {
+  it("keeps six projects ordered and links accurate", () => {
     expect(projects.map(({ title }) => title)).toEqual([
       "EasyBlogger",
       "MediSync",
@@ -16,8 +16,15 @@ describe("factual content invariants", () => {
       "Pacman Live",
     ]);
     expect(projects).toHaveLength(6);
+    expect(projects[0].liveUrl).toBe(
+      "https://easyblogger-7835cbde30d8.herokuapp.com/",
+    );
+    expect(projects[0].repositoryUrl).toBe(
+      "https://github.com/dulanprabashwara/EasyBlogger-frontend",
+    );
+    expect(projects[0].image).toBe("/images/projects/easyblogger.png");
     expect(
-      projects.every(
+      projects.slice(1).every(
         ({ liveUrl, repositoryUrl }) =>
           liveUrl === null && repositoryUrl === null,
       ),
