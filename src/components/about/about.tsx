@@ -1,4 +1,5 @@
 import { SpotlightCard } from "@/components/ui/spotlightcard";
+import { OldBook } from "./old-book";
 
 const COURSES = [
   "Programming Fundamentals",
@@ -14,8 +15,8 @@ export function About() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 border-b border-[var(--border)] dark:border-[#2A2A2A]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        {/* Left Column: Heading */}
-        <div className="lg:col-span-5 lg:sticky lg:top-28">
+        {/* Left Column: Heading and Animated Old Book decoration */}
+        <div className="lg:col-span-5 lg:sticky lg:top-28 flex flex-col">
           <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[var(--muted-plum)] dark:text-[#8A8A8A]">
             01 / ABOUT
           </p>
@@ -25,6 +26,17 @@ export function About() {
           >
             A little more than the resume.
           </h2>
+
+          {/* Animated Old Book decoration in free space */}
+          <div className="mt-10 lg:mt-16 hidden sm:flex relative w-full items-center justify-center lg:justify-start">
+            {/* Subtle warm ambient halo behind book in dark mode */}
+            <div
+              className="pointer-events-none absolute top-1/2 left-1/2 lg:left-1/3 -translate-x-1/2 -translate-y-1/2 w-80 h-64 lg:w-96 lg:h-72 rounded-full bg-[radial-gradient(circle,rgba(212,175,55,0.12)_0%,rgba(47,174,99,0.05)_50%,transparent_72%)] dark:bg-[radial-gradient(circle,rgba(212,175,55,0.25)_0%,rgba(47,174,99,0.08)_50%,transparent_72%)] blur-3xl -z-0"
+              aria-hidden="true"
+            />
+
+            <OldBook />
+          </div>
         </div>
 
         {/* Right Column: Narrative, Academic Facts, and Foundations */}
