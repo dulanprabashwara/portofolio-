@@ -20,14 +20,14 @@ export function NeutralMedia({
   return (
     <div
       aria-hidden="true"
-      className={`relative flex w-full flex-col items-center justify-center overflow-hidden border border-[var(--border,#ddd6e3)] bg-[var(--mist,#f0ebf4)]/60 text-[var(--lavender-gray,#8b8295)] p-6 select-none ${aspectClasses} ${className}`}
+      className={`relative flex w-full flex-col items-center justify-center overflow-hidden border border-[var(--border)] bg-[var(--mist)] text-[var(--muted-plum)] dark:border-[#2A2A2A] dark:bg-[#151515] dark:text-[#8A8A8A] p-6 select-none ${aspectClasses} ${className}`}
     >
       {/* Subtle decorative background pattern */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
-            "radial-gradient(var(--plum,#231d2b) 1px, transparent 1px), radial-gradient(var(--plum,#231d2b) 1px, transparent 1px)",
+            "radial-gradient(currentColor 1px, transparent 1px), radial-gradient(currentColor 1px, transparent 1px)",
           backgroundSize: "16px 16px",
           backgroundPosition: "0 0, 8px 8px",
         }}
@@ -35,25 +35,25 @@ export function NeutralMedia({
 
       {aspect === "circle" ? (
         <div className="relative flex flex-col items-center gap-2 text-center">
-          <span className="material-symbols-outlined text-4xl sm:text-5xl text-[var(--lavender-gray,#8b8295)] opacity-60">
+          <span className="material-symbols-outlined text-4xl sm:text-5xl text-[var(--lavender-gray)] dark:text-[#8A8A8A] opacity-60">
             person
           </span>
-          <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--muted-plum,#655d6f)]">
+          <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--muted-plum)] dark:text-[#C9C9C9]">
             {label}
           </span>
         </div>
       ) : (
         <div className="relative flex flex-col items-center gap-2.5 text-center px-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border,#ddd6e3)] bg-white/70 shadow-2xs">
-            <span className="material-symbols-outlined text-xl text-[var(--muted-plum,#655d6f)]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] bg-white shadow-2xs dark:border-[#2A2A2A] dark:bg-[#1C1C1C]">
+            <span className="material-symbols-outlined text-xl text-[var(--muted-plum)] dark:text-[#C9C9C9]">
               image
             </span>
           </div>
           <div className="space-y-0.5">
-            <span className="font-mono text-xs font-semibold text-[var(--plum,#231d2b)] block">
+            <span className="font-mono text-xs font-semibold text-[var(--plum)] dark:text-[#F5F5F5] block">
               {label}
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--lavender-gray,#8b8295)] block">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--lavender-gray)] dark:text-[#8A8A8A] block">
               PROJECT PREVIEW
             </span>
           </div>

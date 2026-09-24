@@ -1,3 +1,4 @@
+import { CursorGlow } from "@/components/ui/cursor-glow";
 import { About } from "@/components/about/about";
 import { BeyondCode } from "@/components/about/beyond-code";
 import { Approach } from "@/components/approach/approach";
@@ -14,24 +15,32 @@ import { Toolkit } from "@/components/toolkit/toolkit";
 
 export default function Page() {
   return (
-    <div id="top" className="min-h-screen bg-[var(--pearl,#f7f4fa)]">
+    <div
+      id="top"
+      className="min-h-screen bg-[var(--bg-main)] text-[var(--plum)] relative transition-colors duration-300 overflow-x-clip"
+    >
+      <CursorGlow />
       <Header />
       <main id="main-content">
         <section
           id="hero"
           aria-labelledby="hero-title"
-          className="bg-[var(--pearl,#f7f4fa)]"
+          className="bg-[var(--pearl)] dark:bg-[#0A0A0A] overflow-x-clip"
         >
           <Hero />
         </section>
         <section
           id="technology"
           aria-label="Technology overview"
-          className="bg-white/60"
+          className="bg-[var(--mist)] dark:bg-[#0D0D0D]"
         >
           <TechnologyMarquee />
         </section>
-        <section id="about" aria-labelledby="about-title" className="bg-white">
+        <section
+          id="about"
+          aria-labelledby="about-title"
+          className="bg-[var(--pearl)] dark:bg-[#101010]"
+        >
           <Reveal>
             <About />
           </Reveal>
@@ -39,7 +48,7 @@ export default function Page() {
         <section
           id="projects"
           aria-labelledby="projects-title"
-          className="bg-[var(--pearl,#f7f4fa)]"
+          className="bg-[var(--mist)]/40 dark:bg-[#0A0A0A]"
         >
           <Reveal>
             <ProjectList />
@@ -48,7 +57,7 @@ export default function Page() {
         <section
           id="toolkit"
           aria-labelledby="toolkit-title"
-          className="bg-white"
+          className="bg-[var(--pearl)] dark:bg-[#111111]"
         >
           <Reveal>
             <Toolkit />
@@ -57,7 +66,7 @@ export default function Page() {
         <section
           id="approach"
           aria-labelledby="approach-title"
-          className="bg-[var(--mist,#f0ebf4)]/35"
+          className="bg-[var(--mist)] dark:bg-[#0D0D0D]"
         >
           <Reveal>
             <Approach />
@@ -66,7 +75,7 @@ export default function Page() {
         <section
           id="journey"
           aria-labelledby="journey-title"
-          className="bg-white"
+          className="bg-[var(--pearl)] dark:bg-[#101010]"
         >
           <Reveal>
             <Journey />
@@ -75,7 +84,7 @@ export default function Page() {
         <section
           id="recognition"
           aria-labelledby="recognition-title"
-          className="bg-[var(--pearl,#f7f4fa)]"
+          className="bg-[var(--mist)]/40 dark:bg-[#0A0A0A]"
         >
           <Reveal>
             <Recognition />
@@ -84,7 +93,7 @@ export default function Page() {
         <section
           id="beyond-code"
           aria-labelledby="beyond-code-title"
-          className="bg-[var(--mist,#f0ebf4)]/30"
+          className="bg-[var(--pearl)] dark:bg-[#0D0D0D]"
         >
           <Reveal>
             <BeyondCode />
@@ -93,7 +102,7 @@ export default function Page() {
         <section
           id="contact"
           aria-labelledby="contact-title"
-          className="bg-white"
+          className="bg-[var(--mist)] dark:bg-[#121212]"
         >
           <Reveal>
             <Contact />

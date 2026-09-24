@@ -28,7 +28,13 @@ export function ImageLightbox({
     triggerRef,
   });
 
-  if (!open || !achievement || !achievement.image || typeof document === "undefined") return null;
+  if (
+    !open ||
+    !achievement ||
+    !achievement.image ||
+    typeof document === "undefined"
+  )
+    return null;
 
   return createPortal(
     <div
@@ -36,22 +42,22 @@ export function ImageLightbox({
       role="dialog"
       aria-modal="true"
       aria-label={achievement.event}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--plum,#231d2b)]/80 backdrop-blur-md p-4 sm:p-6"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-4 sm:p-6"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div
-        className="relative my-auto flex max-h-[90vh] max-w-4xl flex-col overflow-hidden rounded-2xl border border-[var(--border,#ddd6e3)] bg-white p-4 sm:p-6 shadow-2xl"
+        className="relative my-auto flex max-h-[90vh] max-w-4xl flex-col overflow-hidden rounded-2xl border border-[var(--border)] bg-white p-4 sm:p-6 shadow-2xl dark:border-white/10 dark:bg-[#151515]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header / Close button */}
-        <div className="flex items-center justify-between pb-3 border-b border-[var(--border,#ddd6e3)]">
+        <div className="flex items-center justify-between pb-3 border-b border-[var(--border)] dark:border-white/10">
           <div className="flex items-center gap-2">
             <span className="font-mono text-xs uppercase tracking-wider font-bold text-[var(--green,#2fae63)]">
               {achievement.result}
             </span>
-            <span className="text-sm font-bold text-[var(--plum,#231d2b)]">
+            <span className="text-sm font-bold text-[var(--plum)] dark:text-[#F5F5F5]">
               {achievement.event}
             </span>
           </div>
@@ -60,7 +66,7 @@ export function ImageLightbox({
             type="button"
             onClick={onClose}
             aria-label="Close lightbox"
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border,#ddd6e3)] text-[var(--plum,#231d2b)] hover:bg-[var(--mist,#f0ebf4)] transition-colors"
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--plum)] hover:bg-black/5 dark:border-white/10 dark:text-[#F5F5F5] dark:hover:bg-white/5 transition-colors"
           >
             <span className="material-symbols-outlined" aria-hidden>
               close
@@ -69,7 +75,7 @@ export function ImageLightbox({
         </div>
 
         {/* Image */}
-        <div className="relative aspect-video w-full my-4 overflow-hidden rounded-xl bg-black/5">
+        <div className="relative aspect-video w-full my-4 overflow-hidden rounded-xl bg-black/10 dark:bg-black/30">
           <Image
             src={achievement.image}
             alt={achievement.event}
@@ -80,7 +86,7 @@ export function ImageLightbox({
         </div>
 
         {/* Caption */}
-        <div className="flex flex-wrap items-center justify-between text-xs text-[var(--muted-plum,#655d6f)] font-mono pt-2">
+        <div className="flex flex-wrap items-center justify-between text-xs text-[var(--muted-plum)] dark:text-[#C9C9C9] font-mono pt-2">
           <span>
             {achievement.organizer} • {achievement.institution}
           </span>
@@ -88,6 +94,6 @@ export function ImageLightbox({
         </div>
       </div>
     </div>,
-    document.body
+    document.body,
   );
 }
