@@ -47,12 +47,12 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
                 className="w-full text-left transition-transform duration-300 hover:scale-[1.015] focus-visible:outline-2 focus-visible:outline-[var(--green,#2fae63)] rounded-xl block"
               >
                 {project.image ? (
-                  <div className="relative aspect-16/10 w-full overflow-hidden rounded-xl border border-[var(--border)] dark:border-[#2A2A2A]">
+                  <div className="relative aspect-[2/1] w-full overflow-hidden rounded-xl border border-[var(--border)] dark:border-[#2A2A2A] bg-white dark:bg-[#151515]">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                     />
                   </div>

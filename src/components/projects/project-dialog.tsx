@@ -100,12 +100,12 @@ export function ProjectDialog({
             <div className="lg:col-span-6 flex flex-col gap-5">
               <CardItem translateZ="50" className="w-full">
                 {project.image ? (
-                  <div className="relative aspect-16/10 w-full overflow-hidden rounded-xl border border-[var(--border)] dark:border-white/15 shadow-md group-hover/card:shadow-2xl transition-shadow">
+                  <div className="relative aspect-[2/1] w-full overflow-hidden rounded-xl border border-[var(--border)] dark:border-white/15 shadow-md group-hover/card:shadow-2xl transition-shadow bg-white dark:bg-[#151515]">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </div>

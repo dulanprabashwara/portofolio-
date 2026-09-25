@@ -23,8 +23,33 @@ describe("factual content invariants", () => {
       "https://github.com/dulanprabashwara/EasyBlogger-frontend",
     );
     expect(projects[0].image).toBe("/images/projects/easyblogger.png");
+    expect(projects[1].liveUrl).toBe(
+      "https://medisync-frontend-57b1cdd293eb.herokuapp.com/",
+    );
+    expect(projects[1].repositoryUrl).toBe(
+      "https://github.com/dulanprabashwara/Medisync-frontend",
+    );
+    expect(projects[1].image).toBe("/images/projects/medisync.png");
+    expect(projects[2].liveUrl).toBe("https://ceylonnews.live/");
+    expect(projects[2].repositoryUrl).toBe(
+      "https://github.com/dulanprabashwara/sri-lanka-news-frontend",
+    );
+    expect(projects[2].image).toBe("/images/projects/ceylon-news.png");
+    expect(projects[3].liveUrl).toBe(
+      "https://foundit-frontend-917715127151.us-central1.run.app/",
+    );
+    expect(projects[3].repositoryUrl).toBe(
+      "https://github.com/dulanprabashwara/foundit",
+    );
+    expect(projects[3].image).toBe("/images/projects/foundit.png");
+    expect(projects[4].liveUrl).toBe("https://chat-bot-oh94.vercel.app/");
+    expect(projects[4].repositoryUrl).toBe(
+      "https://github.com/dulanprabashwara/BotNexus",
+    );
+    expect(projects[4].image).toBe("/images/projects/botnexus.png");
+    expect(projects[5].image).toBe("/images/projects/pacman-live.jpg");
     expect(
-      projects.slice(1).every(
+      projects.slice(5).every(
         ({ liveUrl, repositoryUrl }) =>
           liveUrl === null && repositoryUrl === null,
       ),

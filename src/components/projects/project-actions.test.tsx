@@ -13,7 +13,11 @@ describe("ProjectActions component", () => {
   });
 
   it("renders disabled visual placeholders for software projects with null URLs", () => {
-    render(<ProjectActions project={projects[1]} />);
+    render(
+      <ProjectActions
+        project={{ ...projects[0], liveUrl: null, repositoryUrl: null }}
+      />,
+    );
     expect(
       screen.queryByRole("link", { name: /live site|repository/i }),
     ).not.toBeInTheDocument();

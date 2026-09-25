@@ -9,7 +9,7 @@ export const achievements: readonly Achievement[] = [
     institution: "University of Colombo School of Computing",
     team: "Team CodeStormers",
     date: "Feb 2026",
-    image: null,
+    image: "/images/achievements/genzipher.jpg",
   },
   {
     result: "1ST RUNNERS-UP",
@@ -19,6 +19,6 @@ export const achievements: readonly Achievement[] = [
     institution: "University of Moratuwa",
     team: "Team Hexa 404",
     date: "Jan 2026",
-    image: null,
+    image: "/images/achievements/moraxtreme.jpg",
   },
 ] as const;

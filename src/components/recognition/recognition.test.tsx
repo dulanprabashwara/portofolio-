@@ -27,7 +27,7 @@ function LightboxHarness() {
 }
 
 describe("Recognition component", () => {
-  it("renders achievements without invented photo controls", () => {
+  it("renders achievements and photo trigger when image exists", () => {
     render(<Recognition />);
     for (const value of [
       "CHAMPIONS",
@@ -40,8 +40,11 @@ describe("Recognition component", () => {
       expect(screen.getByText(value)).toBeInTheDocument();
     }
     expect(
-      screen.queryByRole("button", { name: /open .* photo/i }),
-    ).not.toBeInTheDocument();
+      screen.getByRole("button", { name: "Open GenZipher Hackathon photo" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Open MoraXtreme 10.0 photo" }),
+    ).toBeInTheDocument();
   });
 
   it("supports lightbox opening, Escape closing, and focus restoration when image exists", async () => {

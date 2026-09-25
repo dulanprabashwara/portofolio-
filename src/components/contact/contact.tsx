@@ -4,6 +4,7 @@ import { socials } from "@/data/socials";
 import { StaggerButton } from "@/components/ui/stagger-button";
 import { SpotlightCard } from "@/components/ui/spotlightcard";
 import { ContactIcon } from "@/components/ui/contact-icon";
+import { HandwrittenSignature } from "@/components/ui/handwritten-signature";
 
 export function Contact() {
   return (
@@ -95,6 +96,15 @@ export function Contact() {
             </div>
           ))}
         </SpotlightCard>
+      </div>
+
+      {/* Signature sign-off above footer */}
+      <div className="mt-16 sm:mt-20 pt-8 border-t border-[var(--border)]/60 dark:border-[#2A2A2A]/60 flex flex-col items-center justify-center text-center">
+        <HandwrittenSignature
+          className="w-48 sm:w-60 h-auto opacity-95 hover:opacity-100 transition-opacity"
+          duration={2.2}
+          delay={0.2}
+        />
       </div>
     </div>
   );
