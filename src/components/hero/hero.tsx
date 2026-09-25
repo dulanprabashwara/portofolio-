@@ -209,18 +209,6 @@ export function Hero() {
                 </span>
               </div>
 
-              {/* Floating Chip 2 (Bottom-Right): Full-Stack • AI with terminal icon */}
-              <div className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 z-10 inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-white/95 backdrop-blur-md px-3 py-1 shadow-md dark:border-white/15 dark:bg-[#151515]/95 transition-transform hover:scale-105">
-                <span
-                  className="material-symbols-outlined text-[14px] text-[var(--green,#2fae63)]"
-                  aria-hidden="true"
-                >
-                  terminal
-                </span>
-                <span className="font-mono text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase text-[var(--plum)] dark:text-[#F5F5F5]">
-                  Full-Stack • AI
-                </span>
-              </div>
             </div>
           </div>
         </div>
