@@ -37,7 +37,10 @@ export function NeutralMedia({
 
       {aspect === "circle" ? (
         <div className="relative flex flex-col items-center gap-2 text-center">
-          <User className="w-10 h-10 sm:w-12 sm:h-12 text-[var(--lavender-gray)] dark:text-[#8A8A8A] opacity-60" aria-hidden="true" />
+          <User
+            className="w-10 h-10 sm:w-12 sm:h-12 text-[var(--lavender-gray)] dark:text-[#8A8A8A] opacity-60"
+            aria-hidden="true"
+          />
           <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--muted-plum)] dark:text-[#C9C9C9]">
             {label}
           </span>
@@ -45,7 +48,10 @@ export function NeutralMedia({
       ) : (
         <div className="relative flex flex-col items-center gap-2.5 text-center px-4">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--border)] bg-white shadow-2xs dark:border-[#2A2A2A] dark:bg-[#1C1C1C]">
-            <ImageIcon className="w-5 h-5 text-[var(--muted-plum)] dark:text-[#C9C9C9]" aria-hidden="true" />
+            <ImageIcon
+              className="w-5 h-5 text-[var(--muted-plum)] dark:text-[#C9C9C9]"
+              aria-hidden="true"
+            />
           </div>
           <div className="space-y-0.5">
             <span className="font-mono text-xs font-semibold text-[var(--plum)] dark:text-[#F5F5F5] block">

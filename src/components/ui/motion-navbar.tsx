@@ -357,7 +357,10 @@ export const NavbarLogo = ({ className }: NavbarLogoProps) => {
       }}
       transition={{ duration: 0.3 }}
     >
-      <Terminal className="w-6 h-6 text-[var(--green,#2fae63)]" aria-hidden="true" />
+      <Terminal
+        className="w-6 h-6 text-[var(--green,#2fae63)]"
+        aria-hidden="true"
+      />
       <span
         className={cn(
           "text-xl md:text-xl font-semibold transition-colors duration-300",

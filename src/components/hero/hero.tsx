@@ -62,18 +62,23 @@ export function Hero() {
                 {shouldReduceMotion ? (
                   <span className="block">Dulan</span>
                 ) : (
-                  <motion.span
-                    className="block will-change-transform"
-                    initial={{ y: 45, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{
-                      duration: 0.72,
-                      ease: [0.22, 1, 0.36, 1],
-                      delay: 0.1,
-                    }}
-                  >
-                    Dulan
-                  </motion.span>
+                  <span className="inline-flex">
+                    {"Dulan".split("").map((letter, i) => (
+                      <motion.span
+                        key={i}
+                        className="inline-block will-change-transform"
+                        initial={{ y: "110%", opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                          duration: 0.52,
+                          ease: [0.22, 1, 0.36, 1],
+                          delay: 0.08 + i * 0.045,
+                        }}
+                      >
+                        {letter}
+                      </motion.span>
+                    ))}
+                  </span>
                 )}
               </span>{" "}
               <span className="block overflow-hidden py-1 -my-1">
@@ -83,30 +88,35 @@ export function Hero() {
                     <span className="text-[var(--green,#2fae63)]">.</span>
                   </span>
                 ) : (
-                  <motion.span
-                    className="block will-change-transform"
-                    initial={{ y: 45, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{
-                      duration: 0.72,
-                      ease: [0.22, 1, 0.36, 1],
-                      delay: 0.26,
-                    }}
-                  >
-                    Prabashwara
+                  <span className="inline-flex">
+                    {"Prabashwara".split("").map((letter, i) => (
+                      <motion.span
+                        key={i}
+                        className="inline-block will-change-transform"
+                        initial={{ y: "110%", opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                          duration: 0.52,
+                          ease: [0.22, 1, 0.36, 1],
+                          delay: 0.32 + i * 0.04,
+                        }}
+                      >
+                        {letter}
+                      </motion.span>
+                    ))}
                     <motion.span
-                      className="inline-block text-[var(--green,#2fae63)] origin-bottom"
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      className="inline-block text-[var(--green,#2fae63)] origin-bottom will-change-transform"
+                      initial={{ opacity: 0, scale: 0.3, y: 15 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
                       transition={{
-                        duration: 0.35,
+                        duration: 0.4,
                         ease: [0.22, 1, 0.36, 1],
-                        delay: 0.75,
+                        delay: 0.82,
                       }}
                     >
                       .
                     </motion.span>
-                  </motion.span>
+                  </span>
                 )}
               </span>
             </h1>

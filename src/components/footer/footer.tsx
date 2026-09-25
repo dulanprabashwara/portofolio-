@@ -9,7 +9,10 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col sm:flex-row items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
         {/* Brand */}
         <div className="flex items-center gap-2 font-mono text-sm font-bold tracking-tight text-[var(--plum)] dark:text-[#F5F5F5]">
-          <Terminal className="w-4 h-4 text-[var(--green,#2fae63)]" aria-hidden="true" />
+          <Terminal
+            className="w-4 h-4 text-[var(--green,#2fae63)]"
+            aria-hidden="true"
+          />
           <span>DULAN.</span>
           <span className="ml-3 font-normal text-xs text-[var(--lavender-gray)] dark:text-[#8A8A8A]">
             Designed &amp; built with care.
