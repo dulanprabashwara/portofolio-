@@ -13,6 +13,7 @@ import Link from "next/link";
 import React, { useState, useRef, useMemo } from "react";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import { Sun, Moon } from "lucide-react";
 
 export interface LampToggleProps {
   className?: string;
@@ -159,19 +160,9 @@ export function LampToggle({ className, length }: LampToggleProps) {
 
         {/* Mode Icon inside bead */}
         {isDarkMode ? (
-          <span
-            className="material-symbols-outlined text-[13px] text-amber-950 font-bold leading-none select-none"
-            aria-hidden="true"
-          >
-            light_mode
-          </span>
+          <Sun className="w-3.5 h-3.5 text-amber-950 stroke-[2.5]" aria-hidden="true" />
         ) : (
-          <span
-            className="material-symbols-outlined text-[13px] text-neutral-600 font-bold leading-none select-none"
-            aria-hidden="true"
-          >
-            dark_mode
-          </span>
+          <Moon className="w-3.5 h-3.5 text-neutral-600 stroke-[2.5]" aria-hidden="true" />
         )}
       </motion.button>
     </div>

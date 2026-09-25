@@ -2,7 +2,7 @@
 
 import React, { useState, createContext, useContext } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, ChevronDown, LucideIcon } from "lucide-react";
+import { Menu, X, ChevronDown, LucideIcon, Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {
@@ -357,12 +357,7 @@ export const NavbarLogo = ({ className }: NavbarLogoProps) => {
       }}
       transition={{ duration: 0.3 }}
     >
-      <span
-        className="material-symbols-outlined text-2xl text-[var(--green,#2fae63)]"
-        aria-hidden
-      >
-        terminal
-      </span>
+      <Terminal className="w-6 h-6 text-[var(--green,#2fae63)]" aria-hidden="true" />
       <span
         className={cn(
           "text-xl md:text-xl font-semibold transition-colors duration-300",

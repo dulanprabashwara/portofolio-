@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { journey } from "@/data/journey";
 import { SpotlightCard } from "@/components/ui/spotlightcard";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
+import { GraduationCap, CheckCircle2 } from "lucide-react";
 
 export function Journey() {
   const shouldReduceMotion = useReducedMotion();
@@ -147,9 +148,11 @@ export function Journey() {
                   {isCurrent && !shouldReduceMotion && (
                     <span className="absolute -inset-1.5 rounded-full bg-[var(--green,#2fae63)]/40 animate-ping opacity-60 pointer-events-none" />
                   )}
-                  <span className="material-symbols-outlined text-base relative z-10">
-                    {isCurrent ? "school" : "verified"}
-                  </span>
+                  {isCurrent ? (
+                    <GraduationCap className="w-4 h-4 relative z-10" aria-hidden="true" />
+                  ) : (
+                    <CheckCircle2 className="w-4 h-4 relative z-10" aria-hidden="true" />
+                  )}
                 </div>
               </div>
             );
@@ -166,9 +169,11 @@ export function Journey() {
                 {isCurrent && !shouldReduceMotion && (
                   <span className="absolute -inset-1 rounded-full bg-[var(--green,#2fae63)]/40 animate-ping opacity-60 pointer-events-none" />
                 )}
-                <span className="material-symbols-outlined text-sm relative z-10">
-                  {isCurrent ? "school" : "verified"}
-                </span>
+                {isCurrent ? (
+                  <GraduationCap className="w-3.5 h-3.5 relative z-10" aria-hidden="true" />
+                ) : (
+                  <CheckCircle2 className="w-3.5 h-3.5 relative z-10" aria-hidden="true" />
+                )}
               </div>
             );
 

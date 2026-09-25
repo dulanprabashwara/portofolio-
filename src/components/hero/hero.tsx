@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { MovingLinesBackground } from "@/components/ui/movinglines-background";
 import { StaggerButton } from "@/components/ui/stagger-button";
+import { ArrowRight, ExternalLink, MapPin } from "lucide-react";
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -128,12 +129,7 @@ export function Hero() {
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--green,#2fae63)] px-6 py-3.5 font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold text-white shadow-sm hover:bg-[var(--green-hover,#258c50)] hover:-translate-y-0.5 transition-all"
                 >
                   <span>Explore my work</span>
-                  <span
-                    className="material-symbols-outlined text-base"
-                    aria-hidden
-                  >
-                    arrow_forward
-                  </span>
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               </StaggerButton>
 
@@ -144,12 +140,7 @@ export function Hero() {
                 className="inline-flex items-center justify-center gap-2 rounded-md border border-[var(--border)] bg-white px-6 py-3.5 font-mono text-xs sm:text-sm uppercase tracking-wider font-semibold text-[var(--plum)] shadow-xs hover:border-[var(--green,#2fae63)] hover:text-[var(--green,#2fae63)] hover:-translate-y-0.5 dark:border-white/15 dark:bg-[#151515] dark:text-[#F5F5F5] transition-all"
               >
                 <span>View résumé</span>
-                <span
-                  className="material-symbols-outlined text-base"
-                  aria-hidden
-                >
-                  open_in_new
-                </span>
+                <ExternalLink className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -198,12 +189,7 @@ export function Hero() {
 
               {/* Floating Chip 1 (Top-Left): Sri Lanka with location icon */}
               <div className="absolute top-1 left-1 sm:top-2 sm:left-2 z-10 inline-flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-white/95 backdrop-blur-md px-3 py-1 shadow-md dark:border-white/15 dark:bg-[#151515]/95 transition-transform hover:scale-105">
-                <span
-                  className="material-symbols-outlined text-[14px] text-[var(--green,#2fae63)]"
-                  aria-hidden="true"
-                >
-                  location_on
-                </span>
+                <MapPin className="w-3.5 h-3.5 text-[var(--green,#2fae63)]" aria-hidden="true" />
                 <span className="font-mono text-[10px] sm:text-[11px] font-semibold tracking-wider text-[var(--plum)] dark:text-[#F5F5F5]">
                   Sri Lanka
                 </span>

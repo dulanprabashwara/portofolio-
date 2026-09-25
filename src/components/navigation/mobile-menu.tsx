@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { createPortal } from "react-dom";
 import { useModalBehavior } from "@/hooks/use-modal-behavior";
+import { Terminal, X, ExternalLink } from "lucide-react";
 
 export type NavItem = {
   label: string;
@@ -54,12 +55,7 @@ export function MobileMenu({
           onClick={onClose}
           className="flex items-center gap-2 font-mono font-bold tracking-tight text-[var(--plum)] dark:text-[#F5F5F5] text-lg"
         >
-          <span
-            className="material-symbols-outlined text-[var(--green,#2fae63)]"
-            aria-hidden
-          >
-            terminal
-          </span>
+          <Terminal className="w-5 h-5 text-[var(--green,#2fae63)]" aria-hidden="true" />
           <span>DULAN.</span>
         </a>
         <button
@@ -68,9 +64,7 @@ export function MobileMenu({
           aria-label="Close navigation"
           className="flex h-10 w-10 items-center justify-center rounded-md border border-[var(--border)] text-[var(--plum)] hover:bg-black/5 dark:border-white/10 dark:text-[#F5F5F5] dark:hover:bg-white/5 transition-colors"
         >
-          <span className="material-symbols-outlined" aria-hidden>
-            close
-          </span>
+          <X className="w-5 h-5" aria-hidden="true" />
         </button>
       </div>
 
@@ -107,9 +101,7 @@ export function MobileMenu({
           className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-md bg-[var(--green,#2fae63)] text-white font-mono text-sm uppercase tracking-wider font-semibold hover:bg-[var(--green-hover,#36c270)] transition-colors shadow-md"
         >
           <span>Resume</span>
-          <span className="material-symbols-outlined text-base" aria-hidden>
-            open_in_new
-          </span>
+          <ExternalLink className="w-4 h-4" aria-hidden="true" />
         </a>
       </div>
     </div>,

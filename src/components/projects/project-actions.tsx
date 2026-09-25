@@ -1,4 +1,5 @@
 import type { Project } from "@/types/content";
+import { ExternalLink } from "lucide-react";
 
 const validUrl = (value: string | null): string | null => {
   if (!value) return null;
@@ -25,9 +26,7 @@ export function ProjectActions({ project }: { project: Project }) {
           className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[var(--green,#2fae63)] hover:text-[var(--green-hover,#36c270)] font-semibold transition-colors min-h-[44px] py-2"
         >
           <span>LIVE SITE</span>
-          <span className="material-symbols-outlined text-sm" aria-hidden>
-            open_in_new
-          </span>
+          <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
         </a>
       ) : (
         <span
@@ -35,9 +34,7 @@ export function ProjectActions({ project }: { project: Project }) {
           className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[var(--lavender-gray)] dark:text-[#8A8A8A] opacity-60 cursor-not-allowed select-none min-h-[44px] py-2"
         >
           <span>LIVE SITE</span>
-          <span className="material-symbols-outlined text-sm" aria-hidden>
-            open_in_new
-          </span>
+          <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
         </span>
       )}
 
@@ -49,9 +46,7 @@ export function ProjectActions({ project }: { project: Project }) {
           className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[var(--plum)] dark:text-[#F5F5F5] hover:text-[var(--green,#2fae63)] font-semibold transition-colors min-h-[44px] py-2"
         >
           <span>REPOSITORY</span>
-          <span className="material-symbols-outlined text-sm" aria-hidden>
-            open_in_new
-          </span>
+          <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
         </a>
       ) : (
         <span
@@ -59,9 +54,7 @@ export function ProjectActions({ project }: { project: Project }) {
           className="inline-flex items-center gap-1 font-mono text-xs uppercase tracking-wider text-[var(--lavender-gray)] dark:text-[#8A8A8A] opacity-60 cursor-not-allowed select-none min-h-[44px] py-2"
         >
           <span>REPOSITORY</span>
-          <span className="material-symbols-outlined text-sm" aria-hidden>
-            open_in_new
-          </span>
+          <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
         </span>
       )}
     </div>

@@ -9,6 +9,7 @@ import type { Project } from "@/types/content";
 import { ProjectActions } from "./project-actions";
 import { TechIcon } from "@/components/ui/tech-icon";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { X, CheckCircle2 } from "lucide-react";
 
 type ProjectDialogProps = {
   project: Project | null;
@@ -88,9 +89,7 @@ export function ProjectDialog({
                   aria-label="Close dialog"
                   className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--plum)] hover:bg-black/5 dark:border-white/10 dark:text-[#F5F5F5] dark:hover:bg-white/5 transition-colors focus-visible:outline-2 focus-visible:outline-[var(--green,#2fae63)] cursor-pointer"
                 >
-                  <span className="material-symbols-outlined text-lg sm:text-xl" aria-hidden>
-                    close
-                  </span>
+                  <X className="w-5 h-5" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -162,12 +161,7 @@ export function ProjectDialog({
                         key={i}
                         className="flex items-start gap-2 text-xs sm:text-sm text-[var(--plum)] dark:text-[#F5F5F5]"
                       >
-                        <span
-                          className="material-symbols-outlined text-[var(--green,#2fae63)] text-base shrink-0 mt-0.5"
-                          aria-hidden
-                        >
-                          check_circle
-                        </span>
+                        <CheckCircle2 className="w-4 h-4 text-[var(--green,#2fae63)] shrink-0 mt-0.5" aria-hidden="true" />
                         <span className="leading-snug break-words">{feature}</span>
                       </li>
                     ))}

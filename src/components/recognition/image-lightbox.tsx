@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { createPortal } from "react-dom";
 import { useModalBehavior } from "@/hooks/use-modal-behavior";
 import type { Achievement } from "@/types/content";
+import { X } from "lucide-react";
 
 type ImageLightboxProps = {
   achievement: Achievement | null;
@@ -68,9 +69,7 @@ export function ImageLightbox({
             aria-label="Close lightbox"
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--plum)] hover:bg-black/5 dark:border-white/10 dark:text-[#F5F5F5] dark:hover:bg-white/5 transition-colors"
           >
-            <span className="material-symbols-outlined" aria-hidden>
-              close
-            </span>
+            <X className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>
 

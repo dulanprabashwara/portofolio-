@@ -8,6 +8,7 @@ import { MediaCard, MediaCardItem } from "@/components/ui/media-card";
 import { StaggerButton } from "@/components/ui/stagger-button";
 import { SpotlightCard } from "@/components/ui/spotlightcard";
 import { TechIcon } from "@/components/ui/tech-icon";
+import { ArrowRight } from "lucide-react";
 
 type ProjectCardProps = {
   project: Project;
@@ -132,9 +133,7 @@ export function ProjectCard({ project, index, onOpen }: ProjectCardProps) {
               aria-label={`Open ${project.title} case study`}
               className="inline-flex items-center justify-center gap-2 rounded-md bg-[var(--green,#2fae63)] hover:bg-[var(--green-hover,#258c50)] text-white px-5 py-2.5 font-mono text-xs uppercase tracking-wider font-semibold shadow-xs hover:-translate-y-0.5 transition-all min-h-[44px]"
             >
-              <span className="material-symbols-outlined text-base" aria-hidden>
-                arrow_forward
-              </span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </StaggerButton>
 
             <ProjectActions project={project} />

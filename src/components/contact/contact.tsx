@@ -5,6 +5,7 @@ import { StaggerButton } from "@/components/ui/stagger-button";
 import { SpotlightCard } from "@/components/ui/spotlightcard";
 import { ContactIcon } from "@/components/ui/contact-icon";
 import { HandwrittenSignature } from "@/components/ui/handwritten-signature";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 export function Contact() {
   return (
@@ -32,9 +33,7 @@ export function Contact() {
               className="inline-flex items-center gap-2 rounded-md bg-[var(--green,#2fae63)] px-6 py-3.5 font-mono text-sm uppercase tracking-wider font-semibold text-white shadow-sm hover:bg-[var(--green-hover,#36c270)] hover:-translate-y-0.5 transition-all"
             >
               <span>Let&apos;s talk</span>
-              <span className="material-symbols-outlined text-base" aria-hidden>
-                arrow_forward
-              </span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </StaggerButton>
         </div>
@@ -85,12 +84,7 @@ export function Contact() {
                   aria-label={`Open ${item.label}`}
                   className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--mist)] text-[var(--muted-plum)] hover:border-[var(--green,#2fae63)] hover:text-[var(--green,#2fae63)] dark:border-[#2A2A2A] dark:bg-[#1A1A1A] dark:text-[#C9C9C9] transition-colors"
                 >
-                  <span
-                    className="material-symbols-outlined text-sm"
-                    aria-hidden
-                  >
-                    open_in_new
-                  </span>
+                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                 </a>
               )}
             </div>

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { MobileMenu, type NavItem } from "./mobile-menu";
 import { LampToggle } from "@/components/ui/lamphome";
+import { Terminal, ExternalLink, Menu, X } from "lucide-react";
 
 const NAV_ITEMS: readonly NavItem[] = [
   { label: "About", href: "#about", id: "about" },
@@ -47,12 +48,7 @@ export function Header() {
           href="#top"
           className="flex items-center gap-2 font-mono text-base font-bold tracking-tight text-[var(--plum)] dark:text-[#F5F5F5] hover:opacity-80 transition-opacity"
         >
-          <span
-            className="material-symbols-outlined text-[var(--green,#2fae63)]"
-            aria-hidden
-          >
-            terminal
-          </span>
+          <Terminal className="w-4 h-4 text-[var(--green,#2fae63)]" aria-hidden="true" />
           <span>DULAN.</span>
         </a>
 
@@ -95,9 +91,7 @@ export function Header() {
             className="flex items-center gap-1.5 rounded-full border border-[var(--border)] bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-wider text-[var(--plum)] hover:border-[var(--green,#2fae63)] hover:text-[var(--green,#2fae63)] dark:border-white/10 dark:bg-[#151515] dark:text-[#F5F5F5] transition-colors shadow-xs"
           >
             <span>Resume</span>
-            <span className="material-symbols-outlined text-sm" aria-hidden>
-              open_in_new
-            </span>
+            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
           </a>
         </div>
 
@@ -110,9 +104,7 @@ export function Header() {
             className="flex items-center gap-1 rounded-full border border-[var(--border)] bg-white px-3 py-1 font-mono text-xs uppercase tracking-wider text-[var(--plum)] hover:border-[var(--green,#2fae63)] dark:border-white/10 dark:bg-[#151515] dark:text-[#F5F5F5] transition-colors"
           >
             <span>Resume</span>
-            <span className="material-symbols-outlined text-xs" aria-hidden>
-              open_in_new
-            </span>
+            <ExternalLink className="w-3 h-3" aria-hidden="true" />
           </a>
 
           <button
@@ -124,9 +116,11 @@ export function Header() {
             aria-label={isOpen ? "Close navigation" : "Open navigation"}
             className="flex h-9 w-9 items-center justify-center rounded-md border border-[var(--border)] text-[var(--plum)] hover:bg-black/5 dark:border-white/10 dark:text-[#F5F5F5] dark:hover:bg-white/5 transition-colors"
           >
-            <span className="material-symbols-outlined" aria-hidden>
-              {isOpen ? "close" : "menu"}
-            </span>
+            {isOpen ? (
+              <X className="w-4 h-4" aria-hidden="true" />
+            ) : (
+              <Menu className="w-4 h-4" aria-hidden="true" />
+            )}
           </button>
         </div>
 
