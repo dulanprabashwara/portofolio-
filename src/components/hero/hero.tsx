@@ -50,7 +50,7 @@ export function Hero() {
 
             {/* Eyebrow */}
             <p className="font-mono text-xs sm:text-sm font-semibold tracking-wider text-[var(--muted-plum)] dark:text-[#8A8A8A] uppercase">
-              SOFTWARE ENGINEERING • FULL-STACK • AI
+              SOFTWARE ENGINEERING • FULL-STACK
             </p>
 
             {/* Heading */}

@@ -25,6 +25,7 @@ import {
   SiGitlab,
   SiDocker,
   SiJenkins,
+  SiDigitalocean,
   SiGooglecloud,
   SiArduino,
   SiEspressif,
@@ -148,6 +149,9 @@ export function TechIcon({
   }
   if (normalized.includes("heroku")) {
     return <GrHeroku className={className} aria-hidden="true" {...props} />;
+  }
+  if (normalized.includes("digitalocean") || normalized.includes("digital ocean")) {
+    return <SiDigitalocean className={className} aria-hidden="true" {...props} />;
   }
   if (normalized.includes("cloud run") || normalized.includes("gcp")) {
     return (

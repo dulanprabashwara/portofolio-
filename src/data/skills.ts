@@ -35,6 +35,8 @@ export const skillGroups: readonly SkillGroup[] = [
       "Docker",
       "Jenkins",
       "Heroku",
+      "DigitalOcean",
+      "Azure",
       "Google Cloud Run",
     ],
   },

@@ -6,7 +6,7 @@ describe("Hero component", () => {
   it("renders exact hero content and destinations", () => {
     render(<Hero />);
     expect(
-      screen.getByText("SOFTWARE ENGINEERING • FULL-STACK • AI"),
+      screen.getByText("SOFTWARE ENGINEERING • FULL-STACK"),
     ).toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
       "Dulan Prabashwara.",
