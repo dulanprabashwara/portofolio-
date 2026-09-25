@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { BeyondCode } from "./beyond-code";
 
 describe("BeyondCode component", () => {
-  it("renders approved quote and the three focus tags without invented claims", () => {
+  it("renders approved quote without invented claims or removed tags", () => {
     render(<BeyondCode />);
     expect(
       screen.getByText(
@@ -11,9 +11,9 @@ describe("BeyondCode component", () => {
       ),
     ).toBeInTheDocument();
 
-    expect(screen.getByText("WEB SYSTEMS")).toBeInTheDocument();
-    expect(screen.getByText("AI")).toBeInTheDocument();
-    expect(screen.getByText("EMBEDDED")).toBeInTheDocument();
+    expect(screen.queryByText("WEB SYSTEMS")).not.toBeInTheDocument();
+    expect(screen.queryByText("AI")).not.toBeInTheDocument();
+    expect(screen.queryByText("EMBEDDED")).not.toBeInTheDocument();
 
     expect(
       screen.queryByText(
