@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { MovingLinesBackground } from "@/components/ui/movinglines-background";
-import { TextHighlighter } from "@/components/ui/text-highlighter";
 import { StaggerButton } from "@/components/ui/stagger-button";
 
 export function Hero() {
@@ -115,14 +114,9 @@ export function Hero() {
             <p className="max-w-xl text-base sm:text-lg text-[var(--muted-plum)] dark:text-[#C9C9C9] leading-relaxed">
               Information Technology undergraduate at the University of Moratuwa
               building full-stack applications, real-time systems, and{" "}
-              <TextHighlighter
-                type="wavy"
-                highlightColor="#2FAE63"
-                highlightOpacity={0.85}
-                strokeWidth={2}
-              >
+              <span className="text-[var(--plum)] dark:text-[#F5F5F5] font-medium">
                 intelligent platforms
-              </TextHighlighter>{" "}
+              </span>{" "}
               with clean architecture.
             </p>
 

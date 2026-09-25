@@ -74,6 +74,11 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   scroll-padding-top: 4.5rem;
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
 }
 
 body {
@@ -86,7 +91,8 @@ body {
 }
 
 .dark html,
-html.dark {
+html.dark,
+html:not(.light) {
   background-color: #0a0a0a;
   color: #f5f5f5;
 }

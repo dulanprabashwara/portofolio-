@@ -32,8 +32,9 @@ export const CardContainer = ({
     if (!containerRef.current) return;
     if (
       typeof window !== "undefined" &&
-      typeof window.matchMedia === "function" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ((typeof window.matchMedia === "function" &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches) ||
+        window.innerWidth < 768)
     ) {
       return;
     }
@@ -181,8 +182,9 @@ export const CardItem = ({
       isMouseEntered &&
       !(
         typeof window !== "undefined" &&
-        typeof window.matchMedia === "function" &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ((typeof window.matchMedia === "function" &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches) ||
+          window.innerWidth < 768)
       )
     ) {
       ref.current.style.transform = `translateX(${formatPx(translateX)}) translateY(${formatPx(translateY)}) translateZ(${formatPx(translateZ)}) rotateX(${formatDeg(rotateX)}) rotateY(${formatDeg(rotateY)}) rotateZ(${formatDeg(rotateZ)})`;
