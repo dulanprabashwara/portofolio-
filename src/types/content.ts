@@ -20,6 +20,7 @@ export type SkillGroup = {
 export type JourneyEntry = {
   institution: string;
   detail: string | null;
+  period?: string;
 };
 
 export type Achievement = {

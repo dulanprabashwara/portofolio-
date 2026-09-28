@@ -109,6 +109,12 @@ export function Journey() {
                   {entry.institution}
                 </h3>
 
+                {entry.period && (
+                  <p className="mt-1 font-mono text-[11px] text-[var(--lavender-gray)] dark:text-[#8A8A8A] tracking-wide">
+                    {entry.period}
+                  </p>
+                )}
+
                 {entry.detail && (
                   <p className="mt-1.5 font-mono text-xs sm:text-sm text-[var(--green,#2fae63)] font-semibold leading-relaxed">
                     {entry.detail}
