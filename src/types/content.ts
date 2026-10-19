@@ -24,7 +24,7 @@ export type JourneyEntry = {
 };
 
 export type Achievement = {
-  result: "CHAMPIONS" | "1ST RUNNERS-UP";
+  result: "CHAMPIONS" | "1ST RUNNERS-UP" | "FINALIST";
   event: string;
   description: string;
   organizer: string;

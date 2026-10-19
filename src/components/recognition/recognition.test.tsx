@@ -36,6 +36,9 @@ describe("Recognition component", () => {
       "1ST RUNNERS-UP",
       "MoraXtreme 10.0",
       "Team Hexa 404",
+      "FINALIST",
+      "Cre8X 3.0",
+      "Team Sputnik",
     ]) {
       expect(screen.getByText(value)).toBeInTheDocument();
     }
@@ -44,6 +47,9 @@ describe("Recognition component", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: "Open MoraXtreme 10.0 photo" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Open Cre8X 3.0 photo" }),
     ).toBeInTheDocument();
   });
 

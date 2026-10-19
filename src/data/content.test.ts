@@ -79,6 +79,7 @@ describe("factual content invariants", () => {
     expect(achievements.map(({ result }) => result)).toEqual([
       "CHAMPIONS",
       "1ST RUNNERS-UP",
+      "FINALIST",
     ]);
   });
 

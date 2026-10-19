@@ -21,4 +21,14 @@ export const achievements: readonly Achievement[] = [
     date: "Jan 2026",
     image: "/images/achievements/moraxtreme.jpg",
   },
+  {
+    result: "FINALIST",
+    event: "Cre8X 3.0",
+    description: "National UI/UX Designathon",
+    organizer: "BCS Student Chapter",
+    institution: "General Sir John Kotelawala Defence University",
+    team: "Team Sputnik",
+    date: "Oct 2026",
+    image: "/images/achievements/cre8x.jpg",
+  },
 ] as const;
