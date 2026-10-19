@@ -80,6 +80,7 @@ describe("factual content invariants", () => {
       "CHAMPIONS",
       "1ST RUNNERS-UP",
       "FINALIST",
+      "FINALIST",
     ]);
   });
 

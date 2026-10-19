@@ -35,7 +35,7 @@ export function Recognition() {
       </div>
 
       {/* Grid of Achievements */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
         {achievements.map((achievement) => {
           const isChampions = achievement.result === "CHAMPIONS";
 
@@ -43,7 +43,7 @@ export function Recognition() {
             <SpotlightCard
               key={achievement.event}
               spotlightColor={isChampions ? "47, 174, 99" : "232, 95, 142"}
-              className="flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-white p-6 sm:p-8 lg:p-8 shadow-xl hover:border-black/20 hover:shadow-2xl dark:border-[#2A2A2A] dark:bg-[#151515] dark:hover:border-white/20 transition-all"
+              className="flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-white p-6 sm:p-8 lg:p-10 shadow-xl hover:border-black/20 hover:shadow-2xl dark:border-[#2A2A2A] dark:bg-[#151515] dark:hover:border-white/20 transition-all"
               contentClassName="flex flex-col justify-between h-full"
             >
               <div>
@@ -62,7 +62,7 @@ export function Recognition() {
                           alt={achievement.event}
                           fill
                           className="object-cover"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          sizes="(max-width: 768px) 100vw, 50vw"
                         />
                       </div>
                     </button>
@@ -77,7 +77,7 @@ export function Recognition() {
                 {/* Prominent Large Typography for Result */}
                 <div className="mt-2">
                   <h3
-                    className={`font-mono text-3xl sm:text-4xl lg:text-4xl font-extrabold tracking-tight ${
+                    className={`font-mono text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight ${
                       isChampions
                         ? "text-[var(--green,#2fae63)]"
                         : "text-[var(--plum)] dark:text-[#F5F5F5]"

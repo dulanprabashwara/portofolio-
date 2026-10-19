@@ -32,16 +32,18 @@ describe("Recognition component", () => {
     for (const value of [
       "CHAMPIONS",
       "GenZipher Hackathon",
-      "Team CodeStormers",
       "1ST RUNNERS-UP",
       "MoraXtreme 10.0",
       "Team Hexa 404",
-      "FINALIST",
       "Cre8X 3.0",
       "Team Sputnik",
+      "J’PuraXtreme 3.0",
     ]) {
       expect(screen.getByText(value)).toBeInTheDocument();
     }
+    expect(screen.getAllByText("FINALIST")).toHaveLength(2);
+    expect(screen.getAllByText("Team CodeStormers")).toHaveLength(2);
+
     expect(
       screen.getByRole("button", { name: "Open GenZipher Hackathon photo" }),
     ).toBeInTheDocument();
@@ -50,6 +52,9 @@ describe("Recognition component", () => {
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: "Open Cre8X 3.0 photo" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Open J’PuraXtreme 3.0 photo" }),
     ).toBeInTheDocument();
   });
 

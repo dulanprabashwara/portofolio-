@@ -31,4 +31,14 @@ export const achievements: readonly Achievement[] = [
     date: "Oct 2026",
     image: "/images/achievements/cre8x.jpg",
   },
+  {
+    result: "FINALIST",
+    event: "J’PuraXtreme 3.0",
+    description: "24-Hour Programming Competition",
+    organizer: "IEEE Student Branch & IEEE Computer Society Chapter",
+    institution: "University of Sri Jayewardenepura",
+    team: "Team CodeStormers",
+    date: "Oct 2026",
+    image: "/images/achievements/jpuraxtreme.jpg",
+  },
 ] as const;
