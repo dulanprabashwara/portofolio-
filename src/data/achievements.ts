@@ -30,6 +30,7 @@ export const achievements: readonly Achievement[] = [
     team: "Team Sputnik",
     date: "Oct 2026",
     image: "/images/achievements/cre8x.jpg",
+    imageFit: "contain",
   },
   {
     result: "FINALIST",
@@ -40,5 +41,6 @@ export const achievements: readonly Achievement[] = [
     team: "Team CodeStormers",
     date: "Oct 2026",
     image: "/images/achievements/jpuraxtreme.jpg",
+    imageFit: "contain",
   },
 ] as const;

@@ -32,6 +32,7 @@ export type Achievement = {
   team: string;
   date: string;
   image: string | null;
+  imageFit?: "cover" | "contain";
 };
 
 export type SocialLink = {

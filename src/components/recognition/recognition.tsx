@@ -61,7 +61,11 @@ export function Recognition() {
                           src={achievement.image}
                           alt={achievement.event}
                           fill
-                          className="object-cover"
+                          className={
+                            achievement.imageFit === "contain"
+                              ? "object-contain"
+                              : "object-cover"
+                          }
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
                       </div>

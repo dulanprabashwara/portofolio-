@@ -74,7 +74,7 @@ export function ImageLightbox({
         </div>
 
         {/* Image */}
-        <div className="relative aspect-video w-full my-4 overflow-hidden rounded-xl bg-black/10 dark:bg-black/30">
+        <div className="relative aspect-4/3 sm:aspect-16/10 w-full my-4 overflow-hidden rounded-xl bg-black/10 dark:bg-black/30">
           <Image
             src={achievement.image}
             alt={achievement.event}
